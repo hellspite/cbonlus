@@ -14,7 +14,7 @@
 .homelogo{
     position:relative;
     max-width:300px;
-    top:200px;
+    top:180px;
     left:50%;
     margin-left:-150px;
     text-align:center;
@@ -22,7 +22,7 @@
 
 @media screen and (max-width:1024px){
     .homelogo{
-        top:80px;
+        top:60px;
         max-width:200px;
         margin-left:-100px;
     }
@@ -30,7 +30,7 @@
 
 @media screen and (max-width:425px){
     .homelogo{
-        top:30px;
+        top:20px;
         max-width:100px;
         margin-left:-50px;
     }
@@ -39,7 +39,7 @@
 
 @media screen and (min-width:1441px){
     .homelogo{
-        top:220px;
+        top:200px;
         max-width:600px;
         margin-left:-300px;
     }

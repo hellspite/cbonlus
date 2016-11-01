@@ -1,0 +1,46 @@
+#backhome{
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    position: fixed; 
+    z-index: -1; 
+}
+
+#backhome > img{
+    width:100%;
+}
+
+.homelogo{
+    position:relative;
+    max-width:300px;
+    top:200px;
+    left:50%;
+    margin-left:-150px;
+    text-align:center;
+}
+
+@media screen and (max-width:1024px){
+    .homelogo{
+        top:80px;
+        max-width:200px;
+        margin-left:-100px;
+    }
+}
+
+@media screen and (max-width:425px){
+    .homelogo{
+        top:30px;
+        max-width:100px;
+        margin-left:-50px;
+    }
+}
+
+
+@media screen and (min-width:1441px){
+    .homelogo{
+        top:220px;
+        max-width:600px;
+        margin-left:-300px;
+    }
+}

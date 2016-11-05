@@ -31,7 +31,10 @@
         "symfony/assetic-bundle": "^2.8",
         "mopa/bootstrap-bundle": "^3.1",
         "twbs/bootstrap": "^3.3",
-        "doctrine/doctrine-migrations-bundle": "^1.0"
+        "doctrine/doctrine-migrations-bundle": "^1.0",
+        "doctrine/data-fixtures": "dev-master",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "hautelook/alice-bundle": "^1.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

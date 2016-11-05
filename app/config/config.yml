@@ -103,3 +103,6 @@ assetic:
                 - '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2'
             output: "fonts/glyphicons-halflings-regular.woff2"
 
+
+hautelook_alice:
+    locale: it_IT   # default

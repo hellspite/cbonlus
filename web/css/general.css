@@ -94,9 +94,9 @@ body{
 }
 
 .main-box{
-    margin-top:-20%;
+    margin-top:-30%;
 }
 
 .main-cell, .right-cell{
-    background-color:#fff;
+    background-color:rgba(255, 255, 255, 0.9);
 }

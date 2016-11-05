@@ -40,7 +40,47 @@
 @media screen and (min-width:1441px){
     .homelogo{
         top:200px;
-        max-width:600px;
-        margin-left:-300px;
+        max-width:500px;
+        margin-left:-250px;
     }
+}
+
+/* TODO: Sistemare in maniera più elegante menu per tablet */
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none !important;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block !important;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent !important;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1) !important;
+    }
+    .navbar-fixed-top {
+        top: 0 !important;
+        border-width: 0 0 1px !important;
+    }
+    #navbar-collapse-1 {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none !important;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    #navbar-collapse-1.collapse.in{
+        display:block !important;
+    }
+
 }

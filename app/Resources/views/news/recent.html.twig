@@ -1,0 +1,5 @@
+{% for post in posts %}
+    <h3>{{ post.date | date("d/m/Y") }}</h3>
+    <h4>{{ post.title }}</h4>
+    <a href="#">leggi l'articolo...</a>
+{% endfor %}

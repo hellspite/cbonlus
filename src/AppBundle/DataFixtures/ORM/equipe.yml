@@ -1,0 +1,6 @@
+AppBundle\Entity\Equipe:
+    equipe{1..4}:
+        name: <firstName()>
+        role: <word()>
+        text: <text()>
+        photo: 'test.jpg'

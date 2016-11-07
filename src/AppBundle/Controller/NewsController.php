@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use AppBundle\Entity\Post;
 
 class NewsController extends Controller
 {
@@ -18,10 +19,12 @@ class NewsController extends Controller
     }
 
     /**
-     * @Route("/blog/post")
+     * @Route("/blog/post/{id}", name="news_show")
      */
-    public function showAction()
+    public function showAction(Post $post)
     {
+        $em = $this->getDoctrine()->getManager();
+
         return $this->render('AppBundle:News:show.html.twig', array(
             // ...
         ));

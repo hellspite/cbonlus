@@ -9,12 +9,16 @@ use AppBundle\Entity\Post;
 class NewsController extends Controller
 {
     /**
-     * @Route("/blog")
+     * @Route("/blog", name="news")
      */
     public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $posts = $em->getRepository('AppBundle:Post')->orderedByDate();
+
         return $this->render('AppBundle:News:index.html.twig', array(
-            // ...
+            'posts' => $posts        
         ));
     }
 

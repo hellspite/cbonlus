@@ -1,7 +1,27 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:News:index{% endblock %}
+{% block title %}{{ parent() }} - Blog{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'news'}) }}
+{% endblock %}
 
 {% block body %}
-<h1>Welcome to the News:index page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+        <div class="col-sm-12 main-cell">
+            {% for post in posts %}
+                <ul class="links">
+                    <li>
+                        <a href="{{ path('news_show', {id: post.id}) }}">{{ post.title }} - {{ post.date | localizeddate('full', 'none', app.request.locale) | title }}</a>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
 {% endblock %}

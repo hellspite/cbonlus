@@ -103,3 +103,7 @@ body{
     min-height:200px !important;
 }
 
+.links{
+    margin-top:10px;
+    list-style-type:none;
+}

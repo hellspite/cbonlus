@@ -23,10 +23,9 @@ class NewsController extends Controller
      */
     public function showAction(Post $post)
     {
-        $em = $this->getDoctrine()->getManager();
 
         return $this->render('AppBundle:News:show.html.twig', array(
-            // ...
+            'post' => $post
         ));
     }
 

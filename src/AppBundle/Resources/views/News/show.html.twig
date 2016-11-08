@@ -1,7 +1,16 @@
-{% extends "::base.html.twig" %}
-
-{% block title %}AppBundle:News:show{% endblock %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Welcome to the News:show page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+        <div class="col-sm-12 main-cell">
+            <h2>{{ post.title }} - {{ post.date | localizeddate('full', 'none', app.request.locale) | title }}</h2>
+            {{ post.text | raw }}
+        </div>
+        </div>
+    </div>
 {% endblock %}

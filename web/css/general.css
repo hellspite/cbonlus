@@ -100,4 +100,6 @@ body{
 
 .main-cell, .right-cell{
     background-color:rgba(255, 255, 255, 0.9);
+    min-height:200px !important;
 }
+

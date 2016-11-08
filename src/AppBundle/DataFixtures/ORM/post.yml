@@ -2,4 +2,4 @@ AppBundle\Entity\Post:
     post{1..10}:
         date: <dateTime()>
         title: <sentence(3)>
-        text: <text()>
+        text: <paragraphs(6, true)>

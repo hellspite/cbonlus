@@ -1,0 +1,4 @@
+AppBundle\Entity\PhotoAlbum:
+    album{1..3}:
+        name: Album<current()>
+        created_at: <dateTime()>

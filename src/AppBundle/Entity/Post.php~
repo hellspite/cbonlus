@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Event
+ * Post
  *
- * @ORM\Table(name="event")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\EventRepository")
+ * @ORM\Table(name="post")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
  */
-class Event
+class Post
 {
     /**
      * @var int
@@ -22,13 +22,6 @@ class Event
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
@@ -38,9 +31,9 @@ class Event
     /**
      * @var string
      *
-     * @ORM\Column(name="place", type="string", length=255, nullable=true)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $place;
+    private $title;
 
     /**
      * @var string
@@ -61,35 +54,11 @@ class Event
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Event
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set date
      *
      * @param \DateTime $date
      *
-     * @return Event
+     * @return Post
      */
     public function setDate($date)
     {
@@ -109,27 +78,27 @@ class Event
     }
 
     /**
-     * Set place
+     * Set title
      *
-     * @param string $place
+     * @param string $title
      *
-     * @return Event
+     * @return Post
      */
-    public function setPlace($place)
+    public function setTitle($title)
     {
-        $this->place = $place;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get place
+     * Get title
      *
      * @return string
      */
-    public function getPlace()
+    public function getTitle()
     {
-        return $this->place;
+        return $this->title;
     }
 
     /**
@@ -137,7 +106,7 @@ class Event
      *
      * @param string $text
      *
-     * @return Event
+     * @return Post
      */
     public function setText($text)
     {
@@ -156,3 +125,4 @@ class Event
         return $this->text;
     }
 }
+

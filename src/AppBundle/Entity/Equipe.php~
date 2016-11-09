@@ -187,3 +187,4 @@ class Equipe
         return $this->email;
     }
 }
+

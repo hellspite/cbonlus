@@ -10,4 +10,27 @@ namespace AppBundle\Repository;
  */
 class EventRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNextEvents(){
+        $now = new \DateTime('now');
+
+        $query = $this->createQueryBuilder('e')
+            ->where('e.date >= :now')
+            ->setParameter('now', $now)
+            ->orderBy('e.date', 'ASC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
+    public function getPastEvents(){
+        $now = new \DateTime('now');
+
+        $query = $this->createQueryBuilder('e')
+            ->where('e.date < :now')
+            ->setParameter('now', $now)
+            ->orderBy('e.date', 'DESC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

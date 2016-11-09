@@ -1,7 +1,28 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Event:index{% endblock %}
+{% block title %}{{ parent() }} - Prossimi Eventi{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'event'}) }}
+{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Event:index page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+            <div class="col-sm-12 main-cell">
+                {% for event in events %}
+                    <ul class="links">
+                        <li>
+                            <a href="{{path('event_show', {id: event.id})}}">{{ event.name }} - {{ event.date | localizeddate('full', 'none', app.request.locale) | title }}</a>
+                        </li>
+                    </ul>
+                {% endfor %}
+                <a href="{{ path('past_events') }}">Eventi passati</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

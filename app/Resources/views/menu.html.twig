@@ -25,7 +25,7 @@
                 <li><a href="#">Area 4</a></li>
             </ul>
         </li>
-        <li><a href="#">Eventi</a></li>
+        <li {% if active == 'event' %}class="active"{% endif %}><a href="{{ path('events') }}">Eventi</a></li>
         <li><a href="#">Galleria</a></li>
         <li><a href="#">Equipe</a></li>
         <li><a href="#">Servizi Integrativi</a></li>

@@ -1,7 +1,7 @@
 AppBundle\Entity\Event:
     event{1..10}:
         name: <sentence(3)>
-        date: <dateTime()>
+        date: <dateTime('+1month')>
         place: <sentence(3)>
         text: <paragraphs(6, true)>
 

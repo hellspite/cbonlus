@@ -1,7 +1,23 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Event:past{% endblock %}
+{% block title %}{{ parent() }} - Eventi Passati{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Event:past page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+            <div class="col-sm-12 main-cell">
+                {% for event in events %}
+                    <ul class="links">
+                        <li>
+                            <a href="{{path('event_show', {id: event.id})}}">{{ event.name }} - {{ event.date | localizeddate('full', 'none', app.request.locale) | title }}</a>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

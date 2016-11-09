@@ -1,7 +1,18 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Event:show{% endblock %}
+{% block title %}{{ parent() }} - {{ event.name }}{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Event:show page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+        <div class="col-sm-12 main-cell">
+            <h2>{{ event.name }} - {{ event.date | localizeddate('full', 'none', app.request.locale) | title }} @ {{ event.place | title }}</h2>
+            {{ event.text | raw }}
+        </div>
+        </div>
+    </div>
 {% endblock %}

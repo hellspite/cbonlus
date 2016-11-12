@@ -10,4 +10,11 @@ namespace AppBundle\Repository;
  */
 class PhotoAlbumRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function orderedByCreation(){
+        $query = $this->createQueryBuilder('a')
+            ->orderBy('a.createdAt', 'DESC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

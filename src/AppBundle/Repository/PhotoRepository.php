@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\PhotoAlbum;
+
 /**
  * PhotoRepository
  *
@@ -10,4 +12,12 @@ namespace AppBundle\Repository;
  */
 class PhotoRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getByAlbum(PhotoAlbum $album){
+        $query = $this->createQueryBuilder('p')
+            ->where('p.album = :album')        
+            ->setParameter('album', $album->getId())
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

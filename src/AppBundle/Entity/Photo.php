@@ -29,7 +29,7 @@ class Photo
     private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity="PhotoAlbum", inversedBy="photos")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\PhotoAlbum", inversedBy="photos")
      * @ORM\JoinColumn(name="album_id", referencedColumnName="id")
      */
     private $album;

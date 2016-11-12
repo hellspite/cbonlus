@@ -1,7 +1,22 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Photo:index{% endblock %}
+{% block title %}{{ parent() }} - Galleria Fotografica{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Photo:index page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+            <div class="col-sm-12 main-cell">
+                {% for album in albums %}
+                    <div class="album-thumb">
+                        <img src="{{ album.photos[0].image }}" class="img-circle img-responsive" /><br/>
+                        <a href="#">{{ album.name }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

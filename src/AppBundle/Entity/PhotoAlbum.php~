@@ -30,6 +30,7 @@ class PhotoAlbum
     private $name;
 
     /**
+     * TODO: da automatizzare
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
@@ -105,5 +106,26 @@ class PhotoAlbum
     {
         return $this->createdAt;
     }
-}
 
+    /**
+     * Set photos
+     *
+     * @param ArrayCollection $photos
+     * @return ArrayCollection
+     */
+    public function setPhotos(ArrayCollection $photos) {
+        $this->photos = $photos;
+        return $this->photos;
+    }
+
+
+    /**
+     * Get photos
+     *
+     * @return ArrayCollection
+     */
+    public function getPhotos(){
+        
+        return $this->photos;
+    }
+}

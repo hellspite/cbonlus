@@ -37,7 +37,7 @@ class PhotoAlbum
      */
     private $createdAt;
 
-    /*
+    /**
      * @ORM\OneToMany(targetEntity="Photo", mappedBy="album")
      */
     private $photos;
@@ -105,5 +105,15 @@ class PhotoAlbum
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * Get photos
+     *
+     * @return ArrayCollection|Photo[]
+     */
+    public function getPhotos(){
+        
+        return $this->photos;
     }
 }

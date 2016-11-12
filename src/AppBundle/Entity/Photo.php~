@@ -67,5 +67,28 @@ class Photo
     {
         return $this->image;
     }
-}
 
+    /**
+     * Set album
+     *
+     * @param \AppBundle\Entity\PhotoAlbum $album
+     *
+     * @return Photo
+     */
+    public function setAlbum(\AppBundle\Entity\PhotoAlbum $album = null)
+    {
+        $this->album = $album;
+
+        return $this;
+    }
+
+    /**
+     * Get album
+     *
+     * @return \AppBundle\Entity\PhotoAlbum
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
+}

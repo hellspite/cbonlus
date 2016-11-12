@@ -110,6 +110,12 @@ body{
 
 .album-thumb{
     max-width:350px;
-    margin:20px;
     text-align:center;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:20px;
+}
+
+.photo-thumb{
+    margin-bottom:20px;
 }

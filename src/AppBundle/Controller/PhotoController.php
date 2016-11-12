@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\PhotoAlbum;
 
 class PhotoController extends Controller
 {
@@ -24,12 +25,17 @@ class PhotoController extends Controller
     }
 
     /**
-     * @Route("/album")
+     * @Route("/album/{id}", name="photos")
      */
-    public function albumAction()
+    public function albumAction(PhotoAlbum $album)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $photos = $em->getRepository('AppBundle:Photo')->getByAlbum($album);
+
         return $this->render('AppBundle:Photo:album.html.twig', array(
-            // ...
+            'photos' => $photos,
+            'album' => $album
         ));
     }
 

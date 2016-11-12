@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-sm-12 main-cell">
                 {% for album in albums %}
-                    <div class="album-thumb">
-                        <img src="{{ album.photos[0].image }}" class="img-circle img-responsive" /><br/>
-                        <a href="#">{{ album.name }}</a>
+                    <div class="album-thumb col-sm-4">
+                        <a href="{{ path('photos', {'id': album.id}) }}"><img src="{{ album.photos[0].image }}" class="img-circle img-responsive" /></a><br/>
+                        <a href="{{ path('photos', {'id': album.id}) }}">{{ album.name }}</a>
                     </div>
                 {% endfor %}
             </div>

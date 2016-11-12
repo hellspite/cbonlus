@@ -1,7 +1,23 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Photo:album{% endblock %}
+{% block title %}{{ parent() }} - {{ album.name }}{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Photo:album page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+            <div class="col-sm-12 main-cell">
+                <h2>{{ album.name | title }}</h2>
+                {% for photo in photos %}
+                    <div class="photo-thumb col-sm-3">
+                        <img src="{{ photo.image }}" class="img-thumbnail img-responsive" />
+                    </div>
+                {% endfor %}
+                <div style="clear:both"><a href="{{ path('photo_album') }}">Torna agli album</a></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

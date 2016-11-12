@@ -2,7 +2,23 @@
 
 {% block title %}{{ parent() }} - {{ album.name }}{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/blueimp-gallery.min.css') }}">
+{% endblock %}
+
 {% block body %}
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+
     <div class="img-head">
         <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
     </div>
@@ -11,13 +27,35 @@
         <div class="row">
             <div class="col-sm-12 main-cell">
                 <h2>{{ album.name | title }}</h2>
-                {% for photo in photos %}
-                    <div class="photo-thumb col-sm-3">
-                        <img src="{{ photo.image }}" class="img-thumbnail img-responsive" />
-                    </div>
-                {% endfor %}
+                <div id="links">
+                    {% for photo in photos %}
+                        <div class="photo-thumb col-sm-3">
+                            <a href="{{ photo.image }}">
+                                <img src="{{ photo.image }}" class="img-thumbnail img-responsive" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
                 <div style="clear:both"><a href="{{ path('photo_album') }}">Torna agli album</a></div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/blueimp-gallery.min.js') }}"></script>
+
+    <script>
+        document.getElementById('links').onclick = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+        };
+    </script>
+
 {% endblock %}

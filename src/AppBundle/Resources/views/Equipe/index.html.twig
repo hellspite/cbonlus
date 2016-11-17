@@ -26,12 +26,18 @@
                         <hr />
                         <div class="row">
                             <div>
-                                {# TODO: da sistemare il collapse #}
-                                {{ e.text|truncate(100, true) }}
-                                <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
-                                    continua
-                                </a>
-                                <div class="collapse" id="collapse{{e.id}}">{{ e.text }}</div>
+                                <div id="precollapse{{e.id}}">
+                                    {{ e.text|truncate(100, true) }}
+                                    <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
+                                        continua
+                                    </a>
+                                </div>
+                                <div class="collapse" id="collapse{{e.id}}">
+                                    {{ e.text }}
+                                    <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
+                                        chiudi
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -39,4 +45,21 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        {% for e in equipe %}
+            $('#collapse{{e.id}}').on('show.bs.collapse', function(){
+                $('#precollapse{{e.id}}').hide();    
+            });    
+
+            $('#collapse{{e.id}}').on('hidden.bs.collapse', function(){
+                $('#precollapse{{e.id}}').show();    
+            });    
+        {% endfor %}
+    </script>
+
 {% endblock %}

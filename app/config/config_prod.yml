@@ -19,3 +19,6 @@ monolog:
             level: debug
         console:
             type:  console
+
+parameters:
+    delivery_address: vegan.emiliano@gmail.com

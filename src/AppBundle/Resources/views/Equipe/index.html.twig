@@ -26,7 +26,12 @@
                         <hr />
                         <div class="row">
                             <div>
-                                {{ e.text }}
+                                {# TODO: da sistemare il collapse #}
+                                {{ e.text|truncate(100, true) }}
+                                <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
+                                    continua
+                                </a>
+                                <div class="collapse" id="collapse{{e.id}}">{{ e.text }}</div>
                             </div>
                         </div>
                     </div>

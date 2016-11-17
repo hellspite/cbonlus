@@ -15,3 +15,5 @@
 /vendor/
 /web/bundles/
 *.swp
+/tags
+/.phpcomplete_extended/*

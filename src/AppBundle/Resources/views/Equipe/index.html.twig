@@ -1,7 +1,37 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Equipe:index{% endblock %}
+{% block title %}{{ parent() }} - Equipe{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'equipe'}) }}
+{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Equipe:index page</h1>
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+            <div class="col-sm-12 main-cell">
+                {% for e in equipe %}
+                    <div class="equipe col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4"><img src="{{ e.photo }}" class="img-responsive img-circle" /></div>
+                            <div class="col-sm-8">
+                                <h2>{{ e.name }}</h2>
+                                <h4>{{ e.role }}</h4>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div>
+                                {{ e.text }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

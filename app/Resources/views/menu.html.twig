@@ -33,7 +33,7 @@
                 <li><a href="#">Video</a></li>
             </ul>
         </li>
-        <li><a href="#">Equipe</a></li>
+        <li {% if active == 'equipe' %}class="active"{% endif %}><a href="{{ path('equipe') }}">Equipe</a></li>
         <li><a href="#">Servizi Integrativi</a></li>
         <li><a href="#">Donazioni</a></li>
         <li><a href="#">Contatti</a></li>

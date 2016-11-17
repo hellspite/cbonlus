@@ -124,3 +124,13 @@ body{
     margin-top:20px;
     margin-bottom:40px;
 }
+
+.map{
+    text-align:center;
+    margin:10px auto 10px auto;
+    width:80%;
+}
+
+.map iframe, .map object, .map embed{
+    width:100%;
+}

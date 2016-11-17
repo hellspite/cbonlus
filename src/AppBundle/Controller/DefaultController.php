@@ -22,4 +22,11 @@ class DefaultController extends Controller
     public function missionAction(Request $request){
         return $this->render('default/mission.html.twig');
     }
+
+    /**
+     * @Route("/contatti", name="contact")
+     */
+    public function contactAction(Request $request){
+        return $this->render('default/contact.html.twig');
+    }
 }

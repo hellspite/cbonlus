@@ -36,7 +36,7 @@
         <li {% if active == 'equipe' %}class="active"{% endif %}><a href="{{ path('equipe') }}">Equipe</a></li>
         <li><a href="#">Servizi Integrativi</a></li>
         <li><a href="#">Donazioni</a></li>
-        <li><a href="#">Contatti</a></li>
+        <li {% if active == 'contact' %}class="active"{% endif %}><a href="{{ path('contact') }}">Contatti</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

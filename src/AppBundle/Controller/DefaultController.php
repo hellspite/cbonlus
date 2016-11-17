@@ -40,6 +40,9 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
+        /**
+         * TODO: sistemare validazione e catalogo locale
+         */
         if($form->isValid()){
             $mailer = $this->get('mailer');
             $message = $mailer->createMessage()
@@ -65,7 +68,9 @@ class DefaultController extends Controller
         }
 
 
-        return $this->render('default/contact.html.twig');
+        return $this->render('default/contact.html.twig', array(
+            'form' => $formView
+        ));
     }
 
     /**

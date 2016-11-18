@@ -43,7 +43,7 @@ class DefaultController extends Controller
         /**
          * TODO: sistemare validazione e catalogo locale
          */
-        if($form->isValid()){
+        if($form->isSubmitted() && $form->isValid()){
             $mailer = $this->get('mailer');
             $message = $mailer->createMessage()
                 ->setSubject('Contatto Cavallino Bianco Onlus')
@@ -66,7 +66,7 @@ class DefaultController extends Controller
             return $this->redirect($this->generateUrl('mail_sent'));
 
         }
-
+        
 
         return $this->render('default/contact.html.twig', array(
             'form' => $formView

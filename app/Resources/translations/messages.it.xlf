@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="il_tuo_nome">
+                <source>Il tuo nome (richiesto)</source>
+                <target>Il tuo nome (richiesto)</target>
+            </trans-unit>
+            <trans-unit id="la_tua_mail">
+                <source>La tua email (richiesto)</source>
+                <target>La tua email (richiesto)</target>
+            </trans-unit>
+            <trans-unit id="il_tuo_numero">
+                <source>Il tuo numero di telefono</source>
+                <target>Il tuo numero di telefono</target>
+            </trans-unit>
+            <trans-unit id="il_tuo_messaggio">
+                <source>Il tuo messaggio</source>
+                <target>Il tuo messaggio</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

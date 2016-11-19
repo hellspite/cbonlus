@@ -2,6 +2,6 @@ AppBundle\Entity\Equipe:
     equipe{1..4}:
         name: <name()>
         role: <word()>
-        text: <text()>
+        text: <text(800)>
         photo: <imageUrl()>
         email: <email()>

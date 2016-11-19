@@ -82,4 +82,12 @@ class DefaultController extends Controller
         return $this->render('default/sent.html.twig');
     }
 
+    /**
+     * @Route("/donazioni", name="donate")
+     */
+    public function donateAction(){
+
+        return $this->render('default/donate.html.twig');
+    }
+
 }

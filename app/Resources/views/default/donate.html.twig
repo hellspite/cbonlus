@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Donazioni{% endblock %}
+
+{% block menu %}
+    {{ include('menu.html.twig', {'active': 'donate'}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="img-head">
+        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container main-box">
+        <div class="row">
+            <div class="col-sm-12 main-cell">
+                <div class="donazioni">
+                    <img src="{{ asset('images/donazioni.png') }}" class="img-responsive" /> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

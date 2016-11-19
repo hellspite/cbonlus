@@ -35,7 +35,7 @@
         </li>
         <li {% if active == 'equipe' %}class="active"{% endif %}><a href="{{ path('equipe') }}">Equipe</a></li>
         <li><a href="#">Servizi Integrativi</a></li>
-        <li><a href="#">Donazioni</a></li>
+        <li {% if active == 'donate' %}class="active"{% endif %}><a href="{{ path('donate') }}">Donazioni</a></li>
         <li {% if active == 'contact' %}class="active"{% endif %}><a href="{{ path('contact') }}">Contatti</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

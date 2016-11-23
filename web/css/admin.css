@@ -1,0 +1,50 @@
+.admin-container{
+
+                  
+}
+
+ul.admin-actions{
+
+    list-style-type:none;
+
+}
+
+ul.admin-actions li{
+
+    margin-top:10px;
+
+}
+
+ul.admin-actions li a{
+
+
+}
+
+th.admin-th{
+    
+    width:10%;
+
+}
+
+ul.admin-actions-show{
+    
+    margin-left:0;
+    padding-left:0;
+
+}
+
+.admin-thumb{
+
+    max-width:220px;
+
+}
+
+.admin-gallery-table td{
+
+    padding-top:20px;
+
+}
+
+.btn{
+    color:#333 !important;
+}

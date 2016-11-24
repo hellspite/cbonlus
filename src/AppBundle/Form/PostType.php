@@ -18,7 +18,17 @@ class PostType extends AbstractType
     {
         $builder
             ->add('date', DateType::Class, ['widget' => 'single_text'])
-            ->add('title')->add('text')        ;
+            ->add('title')
+            ->add('text', CKEditorType::Class, array(
+                'config_name' => 'cbonlus_config',
+                'config' => array(
+                    'filebrowserBrowserRoute' => 'elfinder',
+                    'filebrowserBrowserRouteParameters' => array(
+                        'instance' => 'default',
+                        'homeFolder' => ''
+                    )
+                ),
+            ))        ;
     }
     
     /**

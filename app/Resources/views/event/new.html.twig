@@ -1,16 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Event creation</h1>
+<div class="admin-container">
+    <h1>Nuovo Evento</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        {{ form_row(form.name, {label: 'Nome Evento'}) }}
+        {{ form_row(form.date, {label: 'Data'}) }}
+        {{ form_row(form.place, {label: 'Luogo'}) }}
+        {{ form_row(form.text, {label: 'Testo'}) }}
+    <input class="btn btn-success" type="submit" value="Crea" />
     {{ form_end(form) }}
 
-    <ul>
+    <ul class="admin-actions admin-actions-show">
         <li>
-            <a href="{{ path('admin_event_index') }}">Back to the list</a>
+            <a class="btn btn-success" href="{{ path('admin_event_index') }}">Torna alla lista</a>
         </li>
     </ul>
+</div>
 {% endblock %}

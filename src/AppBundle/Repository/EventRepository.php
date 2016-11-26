@@ -20,7 +20,7 @@ class EventRepository extends \Doctrine\ORM\EntityRepository
     }
 
     public function getNextEvents(){
-        $now = new \DateTime('now');
+        $now = new \DateTime('yesterday');
 
         $query = $this->createQueryBuilder('e')
             ->where('e.date >= :now')

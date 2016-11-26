@@ -5,6 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
 class EventType extends AbstractType
 {
@@ -13,7 +15,20 @@ class EventType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('date')->add('place')->add('text')        ;
+        $builder
+            ->add('name')
+            ->add('date', DateType::Class, ['widget' => 'single_text'])
+            ->add('place')
+            ->add('text', CKEditorType::Class, array(
+                'config_name' => 'cbonlus_config',
+                'config' => array(
+                    'filebrowserBrowserRoute' => 'elfinder',
+                    'filebrowserBrowserRouteParameters' => array(
+                        'instance' => 'default',
+                        'homeFolder' => ''
+                    )
+                ),
+            ))        ;
     }
     
     /**

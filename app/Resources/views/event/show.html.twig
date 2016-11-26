@@ -1,44 +1,46 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Event</h1>
+<div class="admin-container">
+    <h1>{{ event.name|title }}</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ event.name }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{% if event.date %}{{ event.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Place</th>
-                <td>{{ event.place }}</td>
-            </tr>
-            <tr>
-                <th>Text</th>
-                <td>{{ event.text }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <th>Nome Evento</th>
+                        <td>{{ event.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data</th>
+                        <td>{% if event.date %}{{ event.date|date('d-m-Y') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Luogo</th>
+                        <td>{{ event.place }}</td>
+                    </tr>
+                    <tr>
+                        <th>Testo</th>
+                        <td>{{ event.text|raw }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_event_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_event_edit', { 'id': event.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_event_index') }}">Torna alla lista</a>
+            </li>
+            <li>
+                <a class="btn btn-warning" href="{{ path('admin_event_edit', { 'id': event.id }) }}">Modifica</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Elimina">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

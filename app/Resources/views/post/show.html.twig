@@ -1,40 +1,42 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Post</h1>
+<div class="admin-container">
+    <h1>{{ post.title|title}}</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{% if post.date %}{{ post.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ post.title }}</td>
-            </tr>
-            <tr>
-                <th>Text</th>
-                <td>{{ post.text }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <th>Data</th>
+                        <td>{% if post.date %}{{ post.date|date('d-m-Y') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Titolo</th>
+                        <td>{{ post.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Testo</th>
+                        <td>{{ post.text|raw }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_news_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_news_edit', { 'id': post.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_news_index') }}">Torna alla lista</a>
+            </li>
+            <li>
+                <a class="btn btn-warning" href="{{ path('admin_news_edit', { 'id': post.id }) }}">Modifica</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Elimina">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

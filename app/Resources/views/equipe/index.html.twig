@@ -1,0 +1,51 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div class="admin-container">
+    <h1>Amministrazione Equipe</h1>
+
+    <div class="modal-body">
+
+        <a class="btn btn-success" href="{{ path('admin_equipe_new') }}">Crea nuovo</a>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ruolo</th>
+                        <th>Descrizione</th>
+                        {# TODO: implementare foto Equipe #}
+                        <th>Foto</th>
+                        <th>Email</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in equipe %}
+                    <tr>
+                        <td>{{ e.name }}</td>
+                        <td>{{ e.role }}</td>
+                        <td>{{ e.text|truncate(100, true) }}</td>
+                        <td><img src="{{ e.photo }}" alt="" border="0" class="img-responsive" /></td>
+                        <td>{{ e.email }}</td>
+                        <td>
+                            <ul class="admin-actions">
+                                <li>
+                                    <a class="btn btn-success" href="{{ path('admin_equipe_show', { 'id': e.id }) }}">Mostra</a>
+                                </li>
+                                <li>
+                                    <a class="btn btn-warning" href="{{ path('admin_equipe_edit', { 'id': e.id }) }}">Modifica</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a class="btn btn-success" href="{{ path('admin_equipe_new') }}">Crea nuovo</a>
+    </div>
+</div>
+{% endblock %}

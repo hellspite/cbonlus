@@ -10,6 +10,15 @@ namespace AppBundle\Repository;
  */
 class EventRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getOrdered(){
+
+        $query = $this->createQueryBuilder('e')
+            ->orderBy('e.date', 'DESC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
     public function getNextEvents(){
         $now = new \DateTime('now');
 

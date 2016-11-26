@@ -1,48 +1,50 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Equipe</h1>
+<div class="admin-container">
+    <h1>{{ equipe.name|title }}</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ equipe.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ equipe.name }}</td>
-            </tr>
-            <tr>
-                <th>Role</th>
-                <td>{{ equipe.role }}</td>
-            </tr>
-            <tr>
-                <th>Text</th>
-                <td>{{ equipe.text }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td>{{ equipe.photo }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ equipe.email }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <th>Nome</th>
+                        <td>{{ equipe.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ruolo</th>
+                        <td>{{ equipe.role }}</td>
+                    </tr>
+                    <tr>
+                        <th>Descrizione</th>
+                        <td>{{ equipe.text|raw }}</td>
+                    </tr>
+                    <tr>
+                        <th>Foto</th>
+                        <td>{{ equipe.photo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ equipe.email }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_equipe_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_equipe_edit', { 'id': equipe.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_equipe_index') }}">Torna alla lista</a>
+            </li>
+            <li>
+                <a class="btn btn-warning" href="{{ path('admin_equipe_edit', { 'id': equipe.id }) }}">Modifica</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Elimina">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

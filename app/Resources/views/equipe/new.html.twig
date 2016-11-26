@@ -1,16 +1,25 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Equipe creation</h1>
+<div class="admin-container">
+    <div class="modal-body">
+        <h1>Nuovo membro Equipe</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        {{ form_start(form) }}
+            {{ form_row(form.name, {label:'Nome'}) }}
+            {{ form_row(form.role, {label:'Ruolo'}) }}
+            {{ form_row(form.text, {label:'Descrizione'}) }}
+            {# TODO: implementare caricamento foto #}            
+            {{ form_row(form.photo, {label:'Foto'}) }}
+            {{ form_row(form.email) }}
+        <input class="btn btn-success" type="submit" value="Crea" />
+        {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_equipe_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_equipe_index') }}">Torna alla lista</a>
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

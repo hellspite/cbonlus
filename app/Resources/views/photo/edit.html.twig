@@ -6,7 +6,7 @@
 
     <div class="modal-body">
         {{ form_start(edit_form) }}
-            {{ form_row(edit_form.image, {label: 'Foto'}) }}
+            <img src="{{ photo.image}}" class="img-responsive" /><br/>
             {{ form_row(edit_form.album) }}
         <input class="btn btn-warning" type="submit" value="Modifica" />
         {{ form_end(edit_form) }}

@@ -6,10 +6,11 @@
 
     <div class="modal-body">
         {{ form_start(edit_form) }}
-            <img src="{{ photo.image}}" class="img-responsive" /><br/>
+            <img src="{{ asset(['/images/gallery/', photo.image]|join) }}" class="img-responsive" /><br/>
             {{ form_row(edit_form.album) }}
+            {{ form_row(edit_form._token) }}
         <input class="btn btn-warning" type="submit" value="Modifica" />
-        {{ form_end(edit_form) }}
+        </form>
 
         <ul class="admin-actions admin-actions-show">
             <li>

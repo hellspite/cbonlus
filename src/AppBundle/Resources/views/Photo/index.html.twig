@@ -12,7 +12,9 @@
             <div class="col-sm-12 main-cell">
                 {% for album in albums %}
                     <div class="album-thumb col-sm-4">
-                        <a href="{{ path('photos', {'id': album.id}) }}"><img src="{{ album.photos[0].image }}" class="img-circle img-responsive" /></a><br/>
+                        <a href="{{ path('photos', {'id': album.id}) }}">
+                            <img src="{{ asset(['/images/gallery/', album.photos[0].image] | join) }}" class="img-circle img-responsive" />
+                        </a><br/>
                         <a href="{{ path('photos', {'id': album.id}) }}">{{ album.name }}</a>
                     </div>
                 {% endfor %}

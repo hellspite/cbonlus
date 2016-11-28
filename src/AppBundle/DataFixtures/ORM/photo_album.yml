@@ -4,6 +4,7 @@ AppBundle\Entity\PhotoAlbum:
         created_at: <dateTime()>
 
 AppBundle\Entity\Photo:
-    photo{1..20}:
-        image: <imageUrl()>
+    photo{1..12}:
+        image: img<current()>.jpg
         album: '@album*'
+        updated_at: <dateTime()>

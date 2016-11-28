@@ -20,4 +20,12 @@ class PhotoRepository extends \Doctrine\ORM\EntityRepository
 
         return $query->getResult();
     }
+
+    public function getOrderedByUpdate(){
+        $query = $this->createQueryBuilder('p')
+            ->orderBy('p.updatedAt', 'DESC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

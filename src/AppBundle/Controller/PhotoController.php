@@ -24,7 +24,7 @@ class PhotoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $photos = $em->getRepository('AppBundle:Photo')->findAll();
+        $photos = $em->getRepository('AppBundle:Photo')->getOrderedByUpdate();
 
         return $this->render('photo/index.html.twig', array(
             'photos' => $photos,

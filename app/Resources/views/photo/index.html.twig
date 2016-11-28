@@ -19,7 +19,7 @@
                 <tbody>
                     {% for photo in photos %}
                     <tr>
-                        <td><img src="{{ photo.image }}" class="img-responsive" /></td>
+                        <td><img src="{{ asset(['/images/gallery/', photo.image]|join) }}" class="img-responsive" /></td>
                         <td>
                             <ul class="admin-actions">
                                 <li>

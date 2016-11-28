@@ -148,4 +148,8 @@ class Photo
 
     }
 
+    public function getUpdatedAt(){
+        return $this->updatedAt;
+    }
+
 }

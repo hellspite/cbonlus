@@ -2,6 +2,35 @@
 
 {% block body %}
 <div class="admin-container">
+    <h3>Album</h3>
+
+    <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table talbe-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Album</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for album in albums %}
+                    <tr>
+                        <td>{{ album.name|title }}</td>
+                        <td>
+                            <ul class="admin-actions">
+                                <li>
+                                    <a class="btn btn-warning" href="{{ path('admin_photoalbum_edit', { 'id': album.id }) }}">Modifica</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <h3>Amministrazione Foto</h3>
 
     <div class="modal-body">

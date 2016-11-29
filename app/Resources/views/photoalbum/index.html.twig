@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Photoalbums list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for photoAlbum in photoAlbums %}
+            <tr>
+                <td><a href="{{ path('admin_photoalbum_show', { 'id': photoAlbum.id }) }}">{{ photoAlbum.id }}</a></td>
+                <td>{{ photoAlbum.name }}</td>
+                <td>{% if photoAlbum.createdAt %}{{ photoAlbum.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_photoalbum_show', { 'id': photoAlbum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_photoalbum_edit', { 'id': photoAlbum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_photoalbum_new') }}">Create a new photoAlbum</a>
+        </li>
+    </ul>
+{% endblock %}

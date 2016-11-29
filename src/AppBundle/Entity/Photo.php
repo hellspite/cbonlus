@@ -80,7 +80,7 @@ class Photo
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\PhotoAlbum", inversedBy="photos")
-     * @ORM\JoinColumn(name="album_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="album_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $album;
 

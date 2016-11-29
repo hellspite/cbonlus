@@ -36,36 +36,9 @@
                     </div>
 
                     <ul class="nav">
-                        <li class="active">
-                            <a href="{{ path('admin_news_index') }}">
-                                <i class="pe-7s-radio"></i>
-                                <p>Ultime notizie</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_event_index') }}">
-                                <i class="pe-7s-timer"></i>
-                                <p>Eventi</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_foto_index') }}">
-                                <i class="pe-7s-photo"></i>
-                                <p>Galleria Foto</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="pe-7s-film"></i>
-                                <p>Galleria Video</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_equipe_index') }}">
-                                <i class="pe-7s-user"></i>
-                                <p>Equipe</p>
-                            </a>
-                        </li>
+                        {% block menu %}
+                            {{ include('adminmenu.html.twig', {'active': 'news'}) }}
+                        {% endblock %}
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,9 @@
 {% extends 'admin.html.twig' %}
 
+{% block menu %}
+    {{ include('adminmenu.html.twig', {'active': 'equipe'}) }}
+{% endblock %}
+
 {% block body %}
 <div class="admin-container">
     <h1>{{ equipe.name|title }}</h1>

@@ -1,5 +1,9 @@
 {% extends 'admin.html.twig' %}
 
+{% block menu %}
+    {{ include('adminmenu.html.twig', {'active': 'event'}) }}
+{% endblock %}
+
 {% block body %}
 <div class="admin-container">
     <h1>Nuovo Evento</h1>

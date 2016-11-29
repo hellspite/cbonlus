@@ -1,5 +1,9 @@
 {% extends 'admin.html.twig' %}
 
+{% block menu %}
+    {{ include('adminmenu.html.twig', {'active': 'photo'}) }}
+{% endblock %}
+
 {% block body %}
     <h3>Modifica album: {{ photoAlbum.name|title }}</h3>
 

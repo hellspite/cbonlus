@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="video")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\VideoRepository")
+ * @ORM\HasLifecycleCallbacks*
  */
 class Video
 {
@@ -31,10 +32,13 @@ class Video
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="createdAt", type="datetime")
+     * @ORM\Column(name="createdAt", type="datetime", nullable=true)
      */
     private $createdAt;
 
+    public function __construct(){
+        $this->setCreatedAt(new \DateTime());
+    }
 
     /**
      * Get id

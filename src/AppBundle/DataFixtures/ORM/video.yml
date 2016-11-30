@@ -1,7 +1,7 @@
 AppBundle\Entity\Video:
     video1:
-        url: https://youtu.be/jAMHI0BIIOk
+        url: https://www.youtube.com/embed/jAMHI0BIIOk
     video2:
-        url: https://youtu.be/PxlIYJ6DeFg
+        url: https://www.youtube.com/embed/DG3Oln7sgjU
     video3:
-        url: https://youtu.be/CfFyjF4cKwA
+        url: https://www.youtube.com/embed/CfFyjF4cKwA

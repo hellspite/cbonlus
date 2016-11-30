@@ -30,7 +30,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Galleria <span class="caret"></a>
             <ul class="dropdown-menu">
                 <li><a href="{{ path('photo_album') }}">Foto</a></li>
-                <li><a href="#">Video</a></li>
+                <li><a href="{{ path('video') }}">Video</a></li>
             </ul>
         </li>
         <li {% if active == 'equipe' %}class="active"{% endif %}><a href="{{ path('equipe') }}">Equipe</a></li>

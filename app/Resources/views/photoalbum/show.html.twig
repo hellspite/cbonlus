@@ -1,36 +1,38 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Photoalbum</h1>
+<div class="admin-container">
+    <h3>Album {{ photoAlbum.name|title}}</h3>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ photoAlbum.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ photoAlbum.name }}</td>
-            </tr>
-            <tr>
-                <th>Createdat</th>
-                <td>{% if photoAlbum.createdAt %}{{ photoAlbum.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <th>Nome</th>
+                        <td>{{ photoAlbum.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Creato il</th>
+                        <td>{% if photoAlbum.createdAt %}{{ photoAlbum.createdAt|date('d-m-Y') }}{% endif %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_photoalbum_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_photoalbum_edit', { 'id': photoAlbum.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_foto_index') }}">Torna alla lista</a>
+            </li>
+            <li>
+                <a class="btn btn-warning" href="{{ path('admin_photoalbum_edit', { 'id': photoAlbum.id }) }}">Modifica</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-warning" type="submit" value="Elimina">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

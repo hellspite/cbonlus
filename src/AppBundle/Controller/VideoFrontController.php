@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class VideoController extends Controller
+class VideoFrontController extends Controller
 {
     /**
      * @Route("/video", name="video")

@@ -152,3 +152,8 @@ body{
 
     display:inline-block;
 }
+
+.video{
+    max-width:80%;
+    margin:10px auto 10px auto;
+}

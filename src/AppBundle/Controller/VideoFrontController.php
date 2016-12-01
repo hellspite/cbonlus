@@ -14,7 +14,7 @@ class VideoFrontController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $videos = $em->getRepository('AppBundle:Video')->findAll();
+        $videos = $em->getRepository('AppBundle:Video')->getOrderedByCreatedAt();
 
         return $this->render('AppBundle:Video:index.html.twig', array(
             'videos' => $videos

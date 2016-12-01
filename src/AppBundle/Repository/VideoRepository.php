@@ -10,4 +10,11 @@ namespace AppBundle\Repository;
  */
 class VideoRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getOrderedByCreatedAt(){
+        $query = $this->createQueryBuilder('v')
+            ->orderBy('v.createdAt', 'DESC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

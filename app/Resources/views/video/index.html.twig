@@ -1,41 +1,46 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Videos list</h1>
+<div class="admin-container">
+    <h3>Amministrazione Video</h3>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Url</th>
-                <th>Createdat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for video in videos %}
-            <tr>
-                <td><a href="{{ path('admin_video_show', { 'id': video.id }) }}">{{ video.id }}</a></td>
-                <td>{{ video.url }}</td>
-                <td>{% if video.createdAt %}{{ video.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_video_show', { 'id': video.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_video_edit', { 'id': video.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="modal-body">
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_video_new') }}">Create a new video</a>
-        </li>
-    </ul>
+        <a class="btn btn-success" href="{{ path('admin_video_new') }}">Crea nuovo</a>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Indirizzo Video</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for video in videos %}
+                    <tr>
+                        <td>
+                            <div class="video embed-responsive embed-responsive-16by9">    
+                                <iframe class="embed-responsive-item" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="admin-actions">
+                                <li>
+                                    <a class="btn btn-success" href="{{ path('admin_video_show', { 'id': video.id }) }}">Mostra</a>
+                                </li>
+                                <li>
+                                    <a class="btn btn-warning" href="{{ path('admin_video_edit', { 'id': video.id }) }}">Modifica</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a class="btn btn-success" href="{{ path('admin_video_new') }}">Crea nuovo</a>
+    </div>
+</div>
 {% endblock %}

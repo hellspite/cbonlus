@@ -1,16 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Video creation</h1>
+<div class="admin-container">
+    <h3>Nuovo Video</h3>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="modal-body">
+        {{ form_start(form) }}
+        {{ form_row(form.url, {label: 'Indirizzo Video'}) }}
+        {{ form_row(form._token) }}
+        <input class="btn btn-success" type="submit" value="Crea" />
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_video_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_video_index') }}">Torna alla lista</a>
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

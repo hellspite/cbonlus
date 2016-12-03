@@ -1,21 +1,25 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Video edit</h1>
+<div class="admin-container">
+    <h3>Modifica Video</h3>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <div class="modal-body">
+        {{ form_start(edit_form) }}
+        {{ form_row(edit_form.url, {label: 'Indirizzo Video'}) }}
+        {{ form_row(edit_form._token) }}
+        <input class="btn btn-warning" type="submit" value="Modifica" />
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_video_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_video_index') }}">Torna alla lista</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Elimina">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

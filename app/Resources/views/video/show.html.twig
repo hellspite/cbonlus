@@ -1,36 +1,34 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Video</h1>
+<div class="admin-container">
+    <h3>Video</h3>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ video.id }}</td>
-            </tr>
-            <tr>
-                <th>Url</th>
-                <td>{{ video.url }}</td>
-            </tr>
-            <tr>
-                <th>Createdat</th>
-                <td>{% if video.createdAt %}{{ video.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <th>Indirizzo Video</th>
+                        <td>{{ video.url }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_video_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_video_edit', { 'id': video.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <ul class="admin-actions admin-actions-show">
+            <li>
+                <a class="btn btn-success" href="{{ path('admin_video_index') }}">Torna alla lista</a>
+            </li>
+            <li>
+                <a class="btn btn-warning" href="{{ path('admin_video_edit', { 'id': video.id }) }}">Modifica</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Elimina">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

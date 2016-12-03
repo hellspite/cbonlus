@@ -40,9 +40,6 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
-        /**
-         * TODO: sistemare validazione e catalogo locale
-         */
         if($form->isSubmitted() && $form->isValid()){
             $mailer = $this->get('mailer');
             $message = $mailer->createMessage()

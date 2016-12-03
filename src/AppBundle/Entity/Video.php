@@ -29,7 +29,7 @@ class Video
      * @ORM\Column(name="url", type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Regex(
-     *   pattern="/^https:\/\/www\.youtube\.com/",
+     *   pattern="/^https:\/\/www\.youtube\.com|youtu\.be/",
      *   message="Indirizzo youtube non valido"
      * )
      */
@@ -41,10 +41,6 @@ class Video
      * @ORM\Column(name="createdAt", type="datetime", nullable=true)
      */
     private $createdAt;
-
-    public function __construct(){
-        $this->setCreatedAt(new \DateTime());
-    }
 
     /**
      * Get id
@@ -102,6 +98,33 @@ class Video
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setUrlValue(){
+    
+        if(strpos($this->url, 'watch')){
+            $urlArray = explode('=', $this->url);
+            $code = $urlArray[1];
+        }else{
+            $urlArray = explode('/', $this->url);
+            $indexCode = count($urlArray)-1;        
+            $code = $urlArray[$indexCode];
+
+        }
+
+        $url = "https://www.youtube.com/embed/".$code;
+        $this->setUrl($url);
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue(){
+    
+        $this->setCreatedAt(new \DateTime());
     }
 }
 

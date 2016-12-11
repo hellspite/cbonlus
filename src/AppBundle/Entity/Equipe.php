@@ -3,12 +3,17 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Equipe
  *
  * @ORM\Table(name="equipe")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EquipeRepository")
+ * @Vich\Uploadable
  */
 class Equipe
 {
@@ -45,9 +50,25 @@ class Equipe
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255)
+     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
      */
     private $photo;
+
+    /**
+     * @Vich\UploadableField(mapping="equipe_photo", fileNameProperty="photo")
+     *
+     * @var File
+     */
+    private $file;
+
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
+
 
     /**
      * @var string
@@ -185,5 +206,44 @@ class Equipe
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Sets file.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
+     *
+     * @return Photo
+     */
+    public function setFile(File $file = null)
+    {
+        $this->file = $file;
+
+        if($file){
+                
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get file.
+     *
+     * @return File|null
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setUpdatedAt($date){
+
+        $this->updatedAt = $date;
+
+    }
+
+    public function getUpdatedAt(){
+        return $this->updatedAt;
     }
 }

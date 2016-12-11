@@ -113,6 +113,11 @@ vich_uploader:
             upload_destination: '%kernel.root_dir%/../web/images/gallery'
 
             delete_on_remove: true
+        equipe_photo:
+            uri_prefix:         /images/equipe
+            upload_destination: '%kernel.root_dir%/../web/images/equipe'
+
+            delete_on_remove: true
 
 ivory_ck_editor:
     configs:

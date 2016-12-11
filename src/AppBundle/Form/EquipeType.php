@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class EquipeType extends AbstractType
 {
@@ -25,7 +26,8 @@ class EquipeType extends AbstractType
                     )
                 ),
             ))        
-            ->add('photo')->add('email')        ;
+            ->add('file', VichImageType::class, array('required' => false))
+            ->add('email')        ;
     }
     
     /**

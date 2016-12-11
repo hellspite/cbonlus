@@ -1,0 +1,4 @@
+AppBundle\Entity\User:
+    user:
+        username: admin
+        plainPassword: test

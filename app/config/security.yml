@@ -1,9 +1,13 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/book/security.html
 security:
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
+        our_users:
+            entity: { class: AppBundle\Entity\User, property: username }
         in_memory:
             memory: ~
 
@@ -15,14 +19,17 @@ security:
 
         main:
             anonymous: ~
-            # activate different ways to authenticate
+            guard:
+                authenticators:
+                    - app.security.login_form_authenticator
+            logout:
+                path: /logout
+                target: /
 
-            # http_basic: ~
-            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+    encoders:
+        AppBundle\Entity\User: bcrypt
 
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
 
     access_control:
-        - { path: ^/efconnect, role: ROLE_USER }
-        - { path: ^/elfinder, role: ROLE_USER }
+        - { path: ^/efconnect, role: ROLE_ADMIN }
+        - { path: ^/elfinder, role: ROLE_ADMIN }

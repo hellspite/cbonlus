@@ -13,7 +13,7 @@
                 {% for event in events %}
                     <ul class="links">
                         <li>
-                            <a href="{{path('event_show', {id: event.id})}}">{{ event.name }} - {{ event.date | localizeddate('full', 'none', app.request.locale) | title }}</a>
+                            <a href="{{path('event_show', {id: event.id})}}">{{ event.name }} - {{ event.date | date("d/m/Y") }}</a>
                         </li>
                     </ul>
                 {% endfor %}

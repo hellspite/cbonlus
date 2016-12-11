@@ -10,7 +10,7 @@
     <div class="container main-box">
         <div class="row">
         <div class="col-sm-12 main-cell">
-            <h2>{{ post.title }} - {{ post.date | localizeddate('full', 'none', app.request.locale) | title }}</h2>
+            <h2>{{ post.title }} - {{ post.date | date("d/m/Y")  }}</h2>
             {{ post.text | raw }}
         </div>
         </div>

@@ -17,7 +17,7 @@
             {% for post in posts %}
                 <ul class="links">
                     <li>
-                        <a href="{{ path('news_show', {id: post.id}) }}">{{ post.title }} - {{ post.date | localizeddate('full', 'none', app.request.locale) | title }}</a>
+                        <a href="{{ path('news_show', {id: post.id}) }}">{{ post.title }} - {{ post.date | date("d/m/Y")  }}</a>
                     </li>
                 </ul>
             {% endfor %}

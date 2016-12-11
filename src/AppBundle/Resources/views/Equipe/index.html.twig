@@ -24,8 +24,12 @@
                                 <div class="col-sm-12">
                             {% endif %}
                                 <h2>{{ e.name }}</h2>
-                                <h4>{{ e.role }}</h4>
-                                <h4><a href="mailto:{{ e.email }}">contatta</a></h4>
+                                {% if e.role %}
+                                    <h4>{{ e.role }}</h4>
+                                {% endif %}
+                                {% if e.email %}
+                                    <h4><a href="mailto:{{ e.email }}">contatta</a></h4>
+                                {% endif %}
                             </div>
                         </div>
                         <hr />

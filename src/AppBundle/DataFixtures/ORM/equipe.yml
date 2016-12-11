@@ -1,7 +1,30 @@
 AppBundle\Entity\Equipe:
-    equipe{1..4}:
-        name: <name()>
-        role: <word()>
-        text: <text(800)>
-        photo: <imageUrl()>
-        email: <email()>
+    alessia:
+        name: Alessia Carleschi
+        text: |
+                Psicologa clinica e di comunità. Psicoterapeuta e Specialista in Psicologia della Salute presso l’ Università degli Studi “La Sapienza” di Roma.<br/>
+                Iscritta all'Ordine degli Psicologi del Lazio - Numero iscrizione 10740<br/> 
+                Dottore di ricerca in Psicologia dinamica, clinica e dello sviluppo in dicembre 2012. <br/>
+                Dal 2005-2012, Docente a contratto presso la Facoltà di Psicologia l’università Sapienza di Roma, dal 2006-2013, Docente a contratto per i corsi di aggiornamento per le insegnanti del Comune di Roma.<br/>
+                Esperta in progettazione, coordinamento, valutazione in ambito clinico e di ricerca per bambini a sviluppo tipico ed atipico.<br/>
+                Ha competenze sulla presa in carico, valutazione di persone e famiglie con disabilità e Disturbi Specifici dell'Apprendimento (DSA) e con Bisogni Educativi Speciali (BES), lavorando in rete con famiglia e scuola.<br/>
+                Da più di 15 anni collabora con la Aidp Sezione di Roma (progetti infanzia, sostegno alla genitorialità, lavoro di rete con i nidi e le scuole dell’infanzia).<br/>
+                Si occupa di accompagnamento, sostegno alle coppie nel pre e post adozione, sostegno alla genitorialità, monitoraggio dello sviluppo dei bambini adottati.<br/>
+                Coordina le attività di formazione e progettuali per l’Associazione Cavallino Bianco Onlus dal 2015.<br/>
+        email: alessiacarleschi@tiscali.it
+    licia:
+        name: Licia Spataro
+        text: |
+                Psicoterapeuta e Specialista in Psicologia della Salute presso Università degli Studi “Sapienza” in Roma.<br/>
+                Iscritta all'Ordine degli Psicologi del Lazio - Numero iscrizione 18785. Membro SIPSA (Società Italiana di Psicologia della Salute) dal 2010.<br/>
+                Da più di 10 anni collabora con la ASL ROMA-D (Servizi territoriali per la salute mentale) e lavora in rete con il Territorio del X Municipio per il coordinamento delle azioni relative al processo di integrazione/inclusione scolastica in sinergia con le Scuole per la costruzione e la realizzazione di progetti di intervento concernenti la promozione della salute, della qualità della vita e del benessere della persona e della famiglia nel suo ambiente familiare e sociale.<br/>
+                Esperta in progettazione, coordinamento, ed attuazione di progetti per la formazione professionale, la rilevazione del fabbisogno formativo e delle necessità strumentali e strutturali degli studenti e degli insegnanti in situazioni di Diverse Abilità e/o con Disturbi Specifici dell'Apprendimento (DSA) e con Bisogni Educativi Speciali (BES) comprese consulenze scolastiche e la partecipazione.<br/>
+                Dal 2010 al 2012 è stata Docente per la Regione Lazio per Corsi di formazione professionale e sviluppo istituzionale, riqualificazione professionale per lavoratori in relazione a nuove fonti di occupazione.<br/>
+                Coordina le attività cliniche, organizzative e progettuali per l’Associazione Cavallino Bianco Onlus dal 2015.<br/>
+    silvia:
+        name: Silvia Accogli
+        text: |
+                Logopedista laureata presso l’Università degli Studi di Roma Tor Vergata nel dicembre 2001.<br/>
+                Presso il Cavallino Bianco di Ostia in èquipe si occupa di valutazione e trattamento nell’eta’ evolutiva di Disturbi Specifici di Apprendimento (Dislessia, disgrazia, disortografia, discalculia) Disturbi specifici di Linguaggio, quali ritardi nell’acquisizione del linguaggio, alterazioni dei tratti fonetici e articolatori, dislalie, disturbi della fluenza.. Rieducazione dei disturbi comportamentali spesso associati ad alterazioni del linguaggio: iperattivita’, sindromi  ADHD, tratti artistici.<br/>
+                Esperta in Terapia Miofunzionale, per la correzione della deglutizione atipica, e degli squilibri orofacciali,  in collaborazione con  dentisti /ortodonzisti.<br/> 
+                Si occupa di Disfagia, rieducazione della deglutizione e alimentazione per bocca,  sia in patologie neurologiche che meccaniche o post chirurgiche, in eta’ pediatrica e adulta.  Disfonia: rieducazione delle alterazioni della voce in eta’ pediatrica e adulta, associata a cause organiche: noduli, polipi , paralisi cordali o cause funzionali.<br/>

@@ -36,7 +36,7 @@ class Equipe
     /**
      * @var string
      *
-     * @ORM\Column(name="role", type="string", length=255)
+     * @ORM\Column(name="role", type="string", length=255, nullable=true)
      */
     private $role;
 
@@ -55,7 +55,7 @@ class Equipe
     private $photo;
 
     /**
-     * @Vich\UploadableField(mapping="equipe_photo", fileNameProperty="photo")
+     * @Vich\UploadableField(mapping="equipe_photo", fileNameProperty="photo", nullable=true)
      *
      * @var File
      */
@@ -63,7 +63,7 @@ class Equipe
 
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      *
      * @var \DateTime
      */

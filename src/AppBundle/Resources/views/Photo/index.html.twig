@@ -10,6 +10,7 @@
     <div class="container main-box">
         <div class="row">
             <div class="col-sm-12 main-cell">
+                <h3>Galleria Fotografica</h3>
                 {% for album in albums %}
                     <div class="album-thumb col-sm-4">
                         <a href="{{ path('photos', {'id': album.id}) }}">

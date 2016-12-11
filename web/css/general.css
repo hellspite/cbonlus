@@ -2,6 +2,11 @@ body{
     background-color:#5d8fd9 !important;
 }
 
+.navbar-brand img{
+    max-width:50px;
+    margin-top:-20px;
+}
+
 #backhome{
     width: 100%; 
     height: 100%; 
@@ -101,6 +106,7 @@ body{
 .main-cell, .right-cell{
     background-color:rgba(255, 255, 255, 0.9);
     min-height:200px !important;
+    border:1px solid #476da6; 
 }
 
 .links{

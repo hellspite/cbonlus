@@ -3,8 +3,75 @@ body{
 }
 
 .navbar-brand img{
-    max-width:50px;
-    margin-top:-20px;
+    max-width:80px;
+    margin-top:-34px;
+}
+
+.navbar-default{
+    background:none !important;
+    border:none !important;
+}
+
+.navbar-custom{
+    background-color:#5d8fd9 !important;
+    font-weight:700;
+    border-bottom:1px solid #476da6 !important; 
+    display:block;
+}
+
+ul.dropdown-menu{
+    background-color:#5d8fd9 !important; 
+}
+
+.navbar-custom a{
+    color:#eee !important;
+}
+
+li.active > a{
+    background-image:none !important;
+    background-color:#37547f !important;
+}
+
+@media (min-width: 768px) {
+
+
+    .navbar-custom{
+        min-height:50px;    
+    }
+
+  .navbar-custom {
+    padding: 25px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+  }
+  .navbar-custom .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-custom.affix {
+    padding: 10px 0;
+  }
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  }
+
+    nav.navbar.smaller{
+        height:60px;
+        padding:0;
+        padding-top:4px;
+    }
+
+    nav.smaller .navbar-brand{
+        margin-top:22px;
+    }
+
+    nav.smaller .navbar-brand img{
+        height:40px;
+    }
+
 }
 
 #backhome{
@@ -39,9 +106,15 @@ body{
 
 @media screen and (max-width:425px){
     .homelogo{
-        top:20px;
+        top:60px;
         max-width:100px;
         margin-left:-50px;
+    }
+
+    .navbar-brand img{
+        height:40px;
+        position:relative;
+        top:24px;
     }
 }
 

@@ -59,9 +59,7 @@ li.active > a{
   }
 
     nav.navbar.smaller{
-        height:60px;
         padding:0;
-        padding-top:4px;
     }
 
     nav.smaller .navbar-brand{

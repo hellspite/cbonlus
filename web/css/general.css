@@ -2,6 +2,22 @@ body{
     background-color:#5d8fd9 !important;
 }
 
+.header-logo{
+    border:1px solid #000;
+    margin-top:6%;
+    padding-bottom:28px;
+    background-color:#fff;
+}
+
+.header-name{
+}
+
+.header-slogan{
+    position:relative;
+    top:24%;
+    left:57%;
+}
+
 .navbar-brand img{
     max-width:80px;
     margin-top:-34px;
@@ -11,7 +27,6 @@ body{
     background:none !important;
     border:none !important;
     margin-bottom:0 !important;
-    margin-top:6%;
 }
 
 .navbar-custom{
@@ -32,6 +47,12 @@ ul.dropdown-menu{
 li.active > a{
     background-image:none !important;
     background-color:#37547f !important;
+}
+
+@media (max-width: 425px){
+    .header-slogan{
+        display:none;
+    }
 }
 
 @media (min-width: 768px) {

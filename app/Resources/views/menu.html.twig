@@ -8,45 +8,47 @@
         <em>Edmund Burke</em>
     </div>
 </div>
-<nav class="navbar navbar-default navbar-custom">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+<div class="navbar-wrapper">
+    <div class="navbar navbar-default navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li {% if active == 'mission' %}class="active"{% endif %}><a href="{{ path('mission') }}">Chi Siamo</a></li>
-        <li {% if active == 'news' %}class="active"{% endif %}><a href="{{ path('news') }}">News</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servizi <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Area 1</a></li>
-                <li><a href="#">Area 2</a></li>
-                <li><a href="#">Area 3</a></li>
-                <li><a href="#">Area 4</a></li>
-            </ul>
-        </li>
-        <li {% if active == 'event' %}class="active"{% endif %}><a href="{{ path('events') }}">Eventi</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Galleria <span class="caret"></a>
-            <ul class="dropdown-menu">
-                <li><a href="{{ path('photo_album') }}">Foto</a></li>
-                <li><a href="{{ path('video') }}">Video</a></li>
-            </ul>
-        </li>
-        <li {% if active == 'equipe' %}class="active"{% endif %}><a href="{{ path('equipe') }}">Equipe</a></li>
-        <li><a href="#">Servizi Integrativi</a></li>
-        <li {% if active == 'donate' %}class="active"{% endif %}><a href="{{ path('donate') }}">Donazioni</a></li>
-        <li {% if active == 'contact' %}class="active"{% endif %}><a href="{{ path('contact') }}">Contatti</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li {% if active == 'mission' %}class="active"{% endif %}><a href="{{ path('mission') }}">Chi Siamo</a></li>
+                    <li {% if active == 'news' %}class="active"{% endif %}><a href="{{ path('news') }}">News</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servizi <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Area 1</a></li>
+                            <li><a href="#">Area 2</a></li>
+                            <li><a href="#">Area 3</a></li>
+                            <li><a href="#">Area 4</a></li>
+                        </ul>
+                    </li>
+                    <li {% if active == 'event' %}class="active"{% endif %}><a href="{{ path('events') }}">Eventi</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Galleria <span class="caret"></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('photo_album') }}">Foto</a></li>
+                            <li><a href="{{ path('video') }}">Video</a></li>
+                        </ul>
+                    </li>
+                    <li {% if active == 'equipe' %}class="active"{% endif %}><a href="{{ path('equipe') }}">Equipe</a></li>
+                    <li><a href="#">Servizi Integrativi</a></li>
+                    <li {% if active == 'donate' %}class="active"{% endif %}><a href="{{ path('donate') }}">Donazioni</a></li>
+                    <li {% if active == 'contact' %}class="active"{% endif %}><a href="{{ path('contact') }}">Contatti</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </div>
+</div>

@@ -17,57 +17,10 @@ body{
     margin-left:60%;
 }
 
-.navbar-brand img{
-    max-width:80px;
-    margin-top:-34px;
-}
-
-.navbar-default{
-    background:none !important;
-    border:none !important;
-    margin-bottom:0 !important;
-}
-
-.navbar-custom{
-    background-color:#5d8fd9 !important;
-    font-weight:700;
-    border-bottom:1px solid #476da6 !important; 
-    display:block;
-}
-
-ul.dropdown-menu{
-    background-color:#5d8fd9 !important; 
-}
-
-.navbar-custom a{
-    color:#eee !important;
-}
-
-li.active > a{
-    background-image:none !important;
-    background-color:#37547f !important;
-}
-
 @media (max-width: 425px){
     .header-slogan{
         display:none;
     }
-}
-
-@media (min-width: 768px) {
-
-
-    .navbar-custom{
-        min-height:50px;    
-    }
-
-  .navbar-custom {
-    padding: 25px 0;
-  }
-  .navbar-custom .navbar-brand {
-    font-size: 2em;
-  }
-
 }
 
 #backhome{

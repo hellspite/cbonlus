@@ -60,11 +60,6 @@ body{
         margin-left:-50px;
     }
 
-    .navbar-brand img{
-        height:40px;
-        position:relative;
-        top:24px;
-    }
 }
 
 
@@ -114,6 +109,26 @@ body{
         display:block !important;
     }
 
+}
+
+.carousel-caption{
+    background-color:transparent !important;
+    max-width:550px !important;
+    padding: 0 20px !important;
+    top:10% !important;
+    right:0 !important;
+    left:0 !important;
+    bottom:0 !important;
+}
+
+.carousel-caption h1{
+    font-weight:bold;
+    text-shadow:0 1px 1px rgba(0,0,0,.4)
+}
+
+.btn-large{
+    font-size:2em !important;
+    padding:10px 15px !important;
 }
 
 .img-head, .img-head img{

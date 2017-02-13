@@ -62,6 +62,12 @@ body{
 
 }
 
+@media screen and (max-width:767px){
+    #newsCarousel{
+        display:none;
+    }
+}
+
 
 @media screen and (min-width:1441px){
     .homelogo{
@@ -119,12 +125,13 @@ body{
 
 .carousel-caption{
     background-color:transparent !important;
+    color:#666 !important;
     max-width:550px !important;
     padding: 0 20px !important;
     top:10% !important;
     right:0 !important;
-    left:0 !important;
     bottom:0 !important;
+    text-align:justify !important;
 }
 
 .carousel-caption h1{

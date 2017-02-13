@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\ContactType;
+use AppBundle\Entity\Post;
 
 class DefaultController extends Controller
 {
@@ -15,7 +16,13 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('default/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $posts = $em->getRepository('AppBundle:Post')->orderedByDate(3);
+
+        return $this->render('default/index.html.twig', array(
+            'posts' => $posts
+        ));
     }
 
     /**

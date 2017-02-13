@@ -11,30 +11,20 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active">
-                <img src="{{ asset('/images/backcarousel.png') }}" alt="" border="0" />
-                <div class="carousel-caption">
-                    <h1>Prima notizia</h1>
-                    <p class="lead">Del testo andrà anche qui</p>
-                    <a class="btn btn-large btn-primary" href="#">Vai alla notizia</a>
+            {% for post in posts %}
+                {% if loop.index == 1 %}
+                    <div class="item active">
+                {% else %}
+                    <div class="item">
+                {% endif %}
+                    <img src="{{ asset('/images/backcarousel.png') }}" alt="" border="0" />
+                    <div class="carousel-caption">
+                        <h1>{{ post.title|title }}</h1> {{ post.date|date("d/m/Y") }}
+                        <p class="lead">{{ post.text|truncate(50, true)|raw }}</p>
+                        <a class="btn btn-large btn-primary" href="{{ path('news_show', {id: post.id}) }}">Vai alla notizia</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('/images/backcarousel.png') }}" alt="" border="0" />
-                <div class="carousel-caption">
-                    <h1>Seconda notizia</h1>
-                    <p class="lead">Del testo andrà anche qui</p>
-                    <a class="btn btn-large btn-primary" href="#">Vai alla notizia</a>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('/images/backcarousel.png') }}" alt="" border="0" />
-                <div class="carousel-caption">
-                    <h1>Terza notizia</h1>
-                    <p class="lead">Del testo andrà anche qui</p>
-                    <a class="btn btn-large btn-primary" href="#">Vai alla notizia</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <!-- Controls -->

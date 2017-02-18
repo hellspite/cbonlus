@@ -24,6 +24,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <li><a href="{{ path('homepage') }}">Home</a></li>
                     <li {% if active == 'mission' %}class="active"{% endif %}><a href="{{ path('mission') }}">Chi Siamo</a></li>
                     <li {% if active == 'news' %}class="active"{% endif %}><a href="{{ path('news') }}">News</a></li>
                     <li class="dropdown">

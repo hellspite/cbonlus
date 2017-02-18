@@ -148,6 +148,20 @@ body{
     width:100%;
 }
 
+.info{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.info-box{
+    min-height:200px !important;
+    background-color:#fff;
+
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+      border-radius: 10px;
+}
+
 .main-box{
     margin-top:-30%;
     margin-bottom:10%;

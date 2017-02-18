@@ -19,13 +19,14 @@ class EventRepository extends \Doctrine\ORM\EntityRepository
         return $query->getResult();
     }
 
-    public function getNextEvents(){
+    public function getNextEvents($max = null){
         $now = new \DateTime('yesterday');
 
         $query = $this->createQueryBuilder('e')
             ->where('e.date >= :now')
             ->setParameter('now', $now)
             ->orderBy('e.date', 'ASC')
+            ->setMaxResults($max)
             ->getQuery();
 
         return $query->getResult();

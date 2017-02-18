@@ -20,8 +20,11 @@ class DefaultController extends Controller
 
         $posts = $em->getRepository('AppBundle:Post')->orderedByDate(3);
 
+        $event = $em->getRepository('AppBundle:Event')->getNextEvents(1);
+
         return $this->render('default/index.html.twig', array(
-            'posts' => $posts
+            'posts' => $posts,
+            'event' => $event
         ));
     }
 

@@ -1,12 +1,13 @@
 body{
-    background-color:#5d8fd9 !important;
+    background-color:#e7ffff !important;
+    background-image: url(../images/cavallino.jpg);
+    background-repeat:no-repeat;
+    background-size:contain;
 }
 
 .header-logo{
-    border:1px solid #000;
     margin-top:6%;
     padding-bottom:20px;
-    background-color:#fff;
 }
 
 .header-name{
@@ -151,6 +152,7 @@ body{
 .info{
     margin-top:20px;
     margin-bottom:20px;
+    font-family: 'Signika Negative', sans-serif;
 }
 
 .info-box{
@@ -160,6 +162,26 @@ body{
      -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
       border-radius: 10px;
+
+    box-shadow: 2px 2px 5px #888888;
+}
+
+.facebook-img{
+    width:140px;
+    margin-top:8px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:10px;
+}
+
+.facebook{
+    text-align:center;
+}
+
+.facebook-desc a{
+    color:#4267b2;
+    font-size:1.5em;
+    text-decoration:none;
 }
 
 .main-box{

@@ -1,0 +1,25 @@
+body{
+    background-color:#b7cad9 !important;
+}
+
+.frame{
+    max-width:800px;
+    margin-top:40px;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid #333;
+    background-color:#fff;
+}
+
+.header{
+    max-width:798px;
+}
+
+.header-logo{
+    background-color:#e7ffff;
+}
+
+.header-slogan{
+    position:relative;
+    left:36%;
+}

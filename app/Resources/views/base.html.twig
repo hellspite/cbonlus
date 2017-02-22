@@ -6,7 +6,7 @@
         <title>{% block title %}ASSOCIAZIONE CAVALLINO BIANCO - ONLUS{% endblock %}</title>
         <link href="https://fonts.googleapis.com/css?family=Signika+Negative" rel="stylesheet">
         {% block stylesheets %}
-            <link href="{{ asset('css/general.css') }}" rel="stylesheet" /> 
+            <link href="{{ asset('css/alternate.css') }}" rel="stylesheet" /> 
             {% stylesheets '@bootstrap_css' %}
                 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
             {% endstylesheets %}
@@ -15,11 +15,13 @@
     </head>
     <body>
         <div class="container">
-            {% block menu %}
-            {{ include('menu.html.twig', {'active': 'home'}) }}
-            {% endblock %}
+            <div class="frame">
+                {% block menu %}
+                {{ include('menu.html.twig', {'active': 'home'}) }}
+                {% endblock %}
 
-            {% block body %}{% endblock %}
+                {% block body %}{% endblock %}
+            </div>
         </div>
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>

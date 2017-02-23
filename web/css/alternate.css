@@ -1,5 +1,8 @@
 body{
-    background-color:#b7cad9 !important;
+    background-color:#f7ffff !important;
+    background-image: url(../images/cavallinotras.jpg);
+    background-repeat:no-repeat;
+    background-size:contain;
 }
 
 .frame{
@@ -157,6 +160,16 @@ body{
 .btn-large{
     font-size:2em !important;
     padding:10px 15px !important;
+}
+
+.slogan{
+    margin-top:20px;
+    margin-bottom:20px;
+    font-family: 'Signika Negative', sans-serif;
+    font-size:1.5em;
+    color: #013654;
+    text-align:center;
+    max-width:800px;
 }
 
 .info{

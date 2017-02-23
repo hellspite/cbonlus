@@ -162,18 +162,43 @@ body{
     padding:10px 15px !important;
 }
 
+.rightplane{
+    float:right;
+    margin-right:20px;
+    margin-bottom:4px;
+}
+
+.leftplane{
+    margin-left:110px;
+}
+
 .slogan{
     margin-top:20px;
-    margin-bottom:20px;
+    margin-bottom:10px;
     font-family: 'Signika Negative', sans-serif;
     font-size:1.5em;
     color: #013654;
+    font-weight:bold;
     text-align:center;
     max-width:800px;
+    background-color: #013654;
+    clear:both;
+}
+
+.slogan1{
+    color:#7cb7dc;
+}
+
+.slogan2{
+    color:#fff;
+}
+
+.slogan3{
+    color:#7395f0;
 }
 
 .info{
-    margin-top:20px;
+    margin-top:30px;
     margin-bottom:20px;
     font-family: 'Signika Negative', sans-serif;
 }

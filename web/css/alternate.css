@@ -2,8 +2,21 @@ body{
     background-color:#f7ffff !important;
     background-image: url(../images/cavallinotras.jpg), url(../images/bg2.jpg);
     background-repeat:no-repeat;
-    background-position:left, right;
-    background-size: 30%;
+    background-position:left bottom, right;
+    background-attachment:fixed;
+    background-size: 10%;
+}
+
+@media (min-width: 1439px){
+    body{
+        background-size: 22%;
+    }
+}
+
+@media (min-width: 2560px){
+    body{
+        background-size: 32%;
+    }
 }
 
 .frame{

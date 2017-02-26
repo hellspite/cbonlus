@@ -1,0 +1,13 @@
+AppBundle\Entity\Link:
+    link1:
+        title: Municipio XIII
+        url: http://www.comune.roma.it/wps/portal/pcr?jppagecode=municipio_xiii.wp
+    link2:
+        title: Io Cresco
+        url: http://www.iocresco.it/
+    link3:
+        title: Edizioni Erikson
+        url: http://www.erickson.it/
+    link4:
+        title: Giunti Scuola
+        url: http://www.giuntiscuola.it/

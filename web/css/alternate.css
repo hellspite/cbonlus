@@ -241,6 +241,24 @@ body{
 
 /* Fine Eventi Homepage */
 
+/* Link Siti Consigliati */
+.link > h3 {
+    color:#fff;
+    padding-top:4px;
+    padding-bottom:4px;
+    padding-left:20px;
+    background-color:#013654;
+}    
+
+.link > ul{
+    list-style:none;
+}
+
+.link > ul > li > a{
+    font-size:1.5em !important;
+}
+/* Fine Link Siti Consigliati */
+
 .info{
     margin-top:30px;
     margin-bottom:20px;

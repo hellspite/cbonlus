@@ -121,6 +121,19 @@
     </div>
     {# Fine Eventi #}
 
+    {# Link Siti Consigliati #}
+    <div class="link">
+        <h3>Siti Consigliati:</h3>
+        {% for link in links %}
+            <ul>
+                <li>
+                    <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
+    {# Fine Link Siti Consigliati #}
+
     <div class="container-fluid">
         <div class="row info">
             <div class="info-box servizi-integrativi col-sm-3 col-sm-offset-2">

@@ -71,6 +71,56 @@
     <div class="leftplane">
         <img src="{{ asset('images/leftplane.png') }}" />
     </div>
+
+    {# Eventi #}
+    <div class="event-home">
+        {% for e in event %}
+        <div class="row">
+            <div class="date col-sm-1">
+                <div class="day">{{ e.date|date('d') }}</div>
+                <div class="month-year">
+                    {% if e.date|date('m') == 1 %}
+                    Gen
+                    {% elseif e.date|date('m') == 2 %}
+                    Feb
+                    {% elseif e.date|date('m') == 3 %}
+                    Mar
+                    {% elseif e.date|date('m') == 4 %}
+                    Apr
+                    {% elseif e.date|date('m') == 5 %}
+                    Mag
+                    {% elseif e.date|date('m') == 6 %}
+                    Giu
+                    {% elseif e.date|date('m') == 7 %}
+                    Lug
+                    {% elseif e.date|date('m') == 8 %}
+                    Ago
+                    {% elseif e.date|date('m') == 9 %}
+                    Set
+                    {% elseif e.date|date('m') == 10 %}
+                    Ott
+                    {% elseif e.date|date('m') == 11 %}
+                    Nov
+                    {% elseif e.date|date('m') == 12 %}
+                    Dic
+                    {% endif %}
+                    {{ e.date|date("Y") }}
+                </div>
+            </div>
+            <div class="event-content col-sm-11">
+                <a href="{{ path('event_show', {id: e.id}) }}"><h1>{{ e.name|title }}</h1></a>
+                <p>
+                    {{ e.text|truncate(50, true)|raw }}
+                    {% if e.text|length > 50 %}
+                        <a href="{{ path('event_show', {id: e.id}) }}">continua a leggere</a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {# Fine Eventi #}
+
     <div class="row info">
         <div class="info-box servizi-integrativi col-sm-3 col-sm-offset-2">
             <div class="info-title">Servizi integrativi</div>

@@ -22,11 +22,14 @@ class DefaultController extends Controller
 
         $event = $em->getRepository('AppBundle:Event')->getNextEvents(1);
 
+        $events = $em->getRepository('AppBundle:Event')->getNextEvents(3);
+
         $links = $em->getRepository('AppBundle:Link')->findAll();
 
         return $this->render('default/index.html.twig', array(
             'posts' => $posts,
             'event' => $event,
+            'events' => $events,
             'links' => $links
         ));
     }

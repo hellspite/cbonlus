@@ -9,13 +9,13 @@ body{
 
 @media (min-width: 1439px){
     body{
-        background-size: 25%;
+        background-size: 30%;
     }
 }
 
 @media (min-width: 2560px){
     body{
-        background-size: 32%;
+        background-size: 35%;
     }
 }
 

@@ -299,10 +299,24 @@ body{
     text-decoration:none;
 }
 
+.main-cell > h3{
+    font-family: 'Signika Negative', sans-serif;
+    color:#013654;
+}
+
 /* Gallery */
 .img-circle{
     width:350px !important;
     height:250px !important;
+}
+
+.album-thumb{
+    text-align:center;
+}
+
+.album-thumb > a{
+    font-family: 'Signika Negative', sans-serif;
+    font-size:1.3em;
 }
 
 .img-thumbnail{

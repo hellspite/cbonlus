@@ -299,7 +299,7 @@ body{
     text-decoration:none;
 }
 
-.main-cell > h3{
+.main-cell > h3, .main-box > h2{
     font-family: 'Signika Negative', sans-serif;
     color:#013654;
 }

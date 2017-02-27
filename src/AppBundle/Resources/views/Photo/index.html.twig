@@ -3,22 +3,26 @@
 {% block title %}{{ parent() }} - Galleria Fotografica{% endblock %}
 
 {% block body %}
-    <div class="img-head">
-        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
-    </div>
-
-    <div class="container main-box">
+    <div class="container-fluid main-box">
         <div class="row">
             <div class="col-sm-12 main-cell">
                 <h3>Galleria Fotografica</h3>
                 {% for album in albums %}
-                    <div class="album-thumb col-sm-4">
+                    {% if loop.index == 1 %}
+                        <div class="row">
+                    {% endif %}
+                    <div class="album-thumb col-sm-6">
                         <a href="{{ path('photos', {'id': album.id}) }}">
                             <img src="{{ asset(['/images/gallery/', album.photos[0].image] | join) }}" class="img-circle img-responsive" />
                         </a><br/>
                         <a href="{{ path('photos', {'id': album.id}) }}">{{ album.name }}</a>
                     </div>
+                    {% if loop.index % 2 == 0 %}
+                        </div>
+                        <div class="row">
+                    {% endif %}
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>

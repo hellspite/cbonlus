@@ -299,6 +299,22 @@ body{
     text-decoration:none;
 }
 
+/* Gallery */
+.img-circle{
+    width:350px !important;
+    height:250px !important;
+}
+
+.img-thumbnail{
+    height:160px !important;
+    width:160px !important;
+}
+
+.gallery-row{
+    margin-bottom:10px;
+}
+/* Fine Gallery */
+
 .footer{
     margin-top:40px;
     padding-top:10px;

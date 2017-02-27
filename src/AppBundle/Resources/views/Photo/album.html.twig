@@ -19,22 +19,26 @@
         <ol class="indicator"></ol>
     </div>
 
-    <div class="img-head">
-        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
-    </div>
-
-    <div class="container main-box">
+    <div class="container-fluid main-box">
         <div class="row">
             <div class="col-sm-12 main-cell">
                 <h2>{{ album.name | title }}</h2>
                 <div id="links">
                     {% for photo in photos %}
+                        {% if loop.index == 1 %}
+                            <div class="row gallery-row">
+                        {% endif %}
                         <div class="photo-thumb col-sm-3">
                             <a href="{{ asset(['/images/gallery/', photo.image] | join) }}">
                                 <img src="{{ asset(['/images/gallery/', photo.image] | join) }}" class="img-thumbnail img-responsive" />
                             </a>
                         </div>
+                        {% if loop.index % 4 == 0 %}
+                            </div>
+                            <div class="row gallery-row">
+                        {% endif %}
                     {% endfor %}
+                    </div>
                 </div>
                 <div style="clear:both"><a href="{{ path('photo_album') }}">Torna agli album</a></div>
             </div>

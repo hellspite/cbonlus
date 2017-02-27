@@ -4,12 +4,12 @@ body{
     background-repeat:no-repeat;
     background-position:left bottom, right;
     background-attachment:fixed;
-    background-size: 10%;
+    background-size: 15%;
 }
 
 @media (min-width: 1439px){
     body{
-        background-size: 22%;
+        background-size: 25%;
     }
 }
 

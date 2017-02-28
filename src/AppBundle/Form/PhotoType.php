@@ -16,6 +16,7 @@ class PhotoType extends AbstractType
     {
         $builder
             ->add('file', VichImageType::class, array('required' => false))
+            ->add('position', null, array('label' => 'Posizione'))
             ->add('album')        ;
     }
     

@@ -15,6 +15,7 @@ class PhotoRepository extends \Doctrine\ORM\EntityRepository
     public function getByAlbum(PhotoAlbum $album){
         $query = $this->createQueryBuilder('p')
             ->where('p.album = :album')        
+            ->orderBy('p.position', 'ASC')
             ->setParameter('album', $album->getId())
             ->getQuery();
 

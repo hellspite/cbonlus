@@ -12,6 +12,7 @@
         {{ form_start(edit_form) }}
             <img src="{{ asset(['/images/gallery/', photo.image]|join) }}" class="img-responsive" /><br/>
             {{ form_row(edit_form.album) }}
+            {{ form_row(edit_form.position) }}
             {{ form_row(edit_form._token) }}
         <input class="btn btn-warning" type="submit" value="Modifica" />
         </form>

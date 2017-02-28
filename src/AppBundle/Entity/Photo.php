@@ -50,6 +50,13 @@ class Photo
     private $updatedAt;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer")
+     */
+    private $position = 0;
+
+    /**
      * Sets file.
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
@@ -152,4 +159,28 @@ class Photo
         return $this->updatedAt;
     }
 
+
+    /**
+     * Set position
+     *
+     * @param integer $position
+     *
+     * @return Photo
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return integer
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
 }

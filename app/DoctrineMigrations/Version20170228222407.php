@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20170228212201 extends AbstractMigration
+class Version20170228222407 extends AbstractMigration
 {
     /**
      * @param Schema $schema
@@ -18,7 +18,7 @@ class Version20170228212201 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE photo ADD position INT NOT NULL');
+        $this->addSql('ALTER TABLE equipe DROP photo');
     }
 
     /**
@@ -29,6 +29,6 @@ class Version20170228212201 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE photo DROP position');
+        $this->addSql('ALTER TABLE equipe ADD photo VARCHAR(255) DEFAULT NULL COLLATE utf8_unicode_ci');
     }
 }

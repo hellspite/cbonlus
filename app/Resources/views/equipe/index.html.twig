@@ -19,8 +19,6 @@
                         <th>Nome</th>
                         <th>Ruolo</th>
                         <th>Descrizione</th>
-                        {# TODO: implementare foto Equipe #}
-                        <th>Foto</th>
                         <th>Email</th>
                         <th>Azioni</th>
                     </tr>
@@ -31,7 +29,6 @@
                         <td>{{ e.name }}</td>
                         <td>{{ e.role }}</td>
                         <td>{{ e.text|truncate(100, true) }}</td>
-                        <td><img src="{{ e.photo }}" alt="" border="0" class="img-responsive" /></td>
                         <td>{{ e.email }}</td>
                         <td>
                             <ul class="admin-actions">

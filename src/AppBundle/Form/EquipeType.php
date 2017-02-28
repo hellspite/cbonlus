@@ -26,7 +26,6 @@ class EquipeType extends AbstractType
                     )
                 ),
             ))        
-            ->add('file', VichImageType::class, array('required' => false))
             ->add('email')        ;
     }
     

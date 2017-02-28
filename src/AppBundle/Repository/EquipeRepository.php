@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Equipe;
+
 /**
  * EquipeRepository
  *
@@ -10,4 +12,11 @@ namespace AppBundle\Repository;
  */
 class EquipeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getByName(){
+        $query = $this->createQueryBuilder('e')
+            ->orderBy('e.name', 'ASC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

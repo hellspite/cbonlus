@@ -11,30 +11,21 @@
         <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
     </div>
 
-    <div class="container main-box">
+    <div class="container-fluid main-box">
         <div class="row">
             <div class="col-sm-12 main-cell">
-                {% for e in equipe %}
-                    <div class="equipe col-sm-6">
-                        <div class="row">
-                            {% if e.photo %}
-                                <div class="col-sm-4"><img src="{{ asset([ '/images/equipe/', e.photo ] | join) }}" class="img-responsive img-circle" /></div>
-                                <div class="col-sm-8">
-                            {% else %}
-                                <div class="col-sm-12">
-                            {% endif %}
-                                <h2>{{ e.name }}</h2>
-                                {% if e.role %}
-                                    <h4>{{ e.role }}</h4>
-                                {% endif %}
-                                {% if e.email %}
-                                    <h4><a href="mailto:{{ e.email }}">contatta</a></h4>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div>
+                <table class="table table-hover">
+                    <thead>
+                        <th>Nominativo</th>
+                        <th>Ruolo</th>
+                        <th>Curriculum</th>
+                        <th>Email</th>
+                    </thead>
+                    {% for e in equipe %}
+                        <tr>
+                            <td><h3>{{ e.name }}</h3></td>
+                            <td><h4>{{ e.role }}</h4></td>
+                            <td>
                                 <div id="precollapse{{e.id}}">
                                     {{ e.text|truncate(100, true)|raw }}
                                     <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
@@ -47,10 +38,15 @@
                                         chiudi
                                     </a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+                            </td>
+                            <td>
+                                {% if e.email %}
+                                <h4><a href="mailto:{{ e.email }}">contatta</a></h4>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
             </div>
         </div>
     </div>

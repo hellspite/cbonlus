@@ -4,16 +4,12 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Equipe
  *
  * @ORM\Table(name="equipe")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EquipeRepository")
- * @Vich\Uploadable
  */
 class Equipe
 {
@@ -46,21 +42,6 @@ class Equipe
      * @ORM\Column(name="text", type="text")
      */
     private $text;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
-     */
-    private $photo;
-
-    /**
-     * @Vich\UploadableField(mapping="equipe_photo", fileNameProperty="photo", nullable=true)
-     *
-     * @var File
-     */
-    private $file;
-
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -161,30 +142,6 @@ class Equipe
     }
 
     /**
-     * Set photo
-     *
-     * @param string $photo
-     *
-     * @return Equipe
-     */
-    public function setPhoto($photo)
-    {
-        $this->photo = $photo;
-
-        return $this;
-    }
-
-    /**
-     * Get photo
-     *
-     * @return string
-     */
-    public function getPhoto()
-    {
-        return $this->photo;
-    }
-
-    /**
      * Set email
      *
      * @param string $email
@@ -206,35 +163,6 @@ class Equipe
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * Sets file.
-     *
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
-     *
-     * @return Photo
-     */
-    public function setFile(File $file = null)
-    {
-        $this->file = $file;
-
-        if($file){
-                
-            $this->updatedAt = new \DateTime('now');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get file.
-     *
-     * @return File|null
-     */
-    public function getFile()
-    {
-        return $this->file;
     }
 
     public function setUpdatedAt($date){

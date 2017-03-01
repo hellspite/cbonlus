@@ -18,9 +18,12 @@ class EquipeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $roles = $em->getRepository('AppBundle:Role')->findAll();
+
         $equipe = $em->getRepository('AppBundle:Equipe')->getByName();
 
         return $this->render('AppBundle:Equipe:index.html.twig', array(
+            'roles' => $roles,
             'equipe' => $equipe
         ));
     }

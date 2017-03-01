@@ -15,23 +15,12 @@
         <div class="row">
             <div class="col-sm-12 main-cell">
                 <table class="table table-hover">
-                    <thead>
-                        <th>Nominativo</th>
-                        <th>Ruolo</th>
-                        <th>Curriculum</th>
-                        <th>Email</th>
-                    </thead>
-                    {% for e in equipe %}
+                    {% for role in roles %}
                         <tr>
-                            <td><h3>{{ e.name }}</h3></td>
-                            <td><h4>{{ e.role }}</h4></td>
+                            <td><h3>{{ role.name }}</h3></td>
+                            {% for e in role.equipes %}
                             <td>
-                                <div id="precollapse{{e.id}}">
-                                    {{ e.text|truncate(100, true)|raw }}
-                                    <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
-                                        continua
-                                    </a>
-                                </div>
+                                <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">{{ e.name }}</a>
                                 <div class="collapse" id="collapse{{e.id}}">
                                     {{ e.text|raw }}
                                     <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
@@ -39,32 +28,11 @@
                                     </a>
                                 </div>
                             </td>
-                            <td>
-                                {% if e.email %}
-                                <h4><a href="mailto:{{ e.email }}">contatta</a></h4>
-                                {% endif %}
-                            </td>
+                            {% endfor %}
                         </tr>
                     {% endfor %}
                 </table>
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-
-    <script>
-        {% for e in equipe %}
-            $('#collapse{{e.id}}').on('show.bs.collapse', function(){
-                $('#precollapse{{e.id}}').hide();    
-            });    
-
-            $('#collapse{{e.id}}').on('hidden.bs.collapse', function(){
-                $('#precollapse{{e.id}}').show();    
-            });    
-        {% endfor %}
-    </script>
-
 {% endblock %}

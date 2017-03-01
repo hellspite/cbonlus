@@ -32,7 +32,8 @@ class Equipe
     /**
      * @var string
      *
-     * @ORM\Column(name="role", type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="equipes")
+     * @ORM\JoinColumn("role_id", referencedColumnName="id")
      */
     private $role;
 

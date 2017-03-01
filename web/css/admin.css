@@ -48,3 +48,9 @@ ul.admin-actions-show{
 .btn{
     color:#333 !important;
 }
+
+.img-thumbnail{
+    height:360px !important;
+    width:360px !important;
+    margin-bottom:10px;
+}

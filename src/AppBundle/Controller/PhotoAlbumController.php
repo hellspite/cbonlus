@@ -67,8 +67,13 @@ class PhotoAlbumController extends Controller
     {
         $deleteForm = $this->createDeleteForm($photoAlbum);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $photos = $em->getRepository('AppBundle:Photo')->getByAlbum($photoAlbum);
+
         return $this->render('photoalbum/show.html.twig', array(
             'photoAlbum' => $photoAlbum,
+            'photos' => $photos,
             'delete_form' => $deleteForm->createView(),
         ));
     }

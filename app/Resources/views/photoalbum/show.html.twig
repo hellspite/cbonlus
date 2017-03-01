@@ -22,17 +22,39 @@
 
         <ul class="admin-actions admin-actions-show">
             <li>
-                <a class="btn btn-success" href="{{ path('admin_foto_index') }}">Torna alla lista</a>
+                <a class="btn btn-success" href="{{ path('admin_photoalbum_index') }}">Torna alla lista</a>
             </li>
             <li>
                 <a class="btn btn-warning" href="{{ path('admin_photoalbum_edit', { 'id': photoAlbum.id }) }}">Modifica</a>
             </li>
             <li>
                 {{ form_start(delete_form) }}
-                <input class="btn btn-warning" type="submit" value="Elimina">
+                <input class="btn btn-danger" type="submit" value="Elimina Album">
                 {{ form_end(delete_form) }}
             </li>
         </ul>
     </div>
+
+
+    <a class="btn btn-success" href="{{ path('admin_foto_new') }}">Nuova Foto</a><br/><br/>
+    <div id="links">
+        {% for photo in photos %}
+            {% if loop.index == 1 %}
+                <div class="row gallery-row">
+            {% endif %}
+            <div class="photo-thumb col-sm-3">
+                <a href="{{ path('admin_foto_edit', { 'id': photo.id }) }}">
+                    <img src="{{ asset(['/images/gallery/', photo.image] | join) }}" class="img-thumbnail img-responsive" />
+                </a>
+            </div>
+            {% if loop.index % 4 == 0 %}
+                </div>
+                <div class="row gallery-row">
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    <a class="btn btn-success" href="{{ path('admin_foto_new') }}">Nuova Foto</a>
+
 </div>
 {% endblock %}

@@ -118,7 +118,7 @@ class PhotoController extends Controller
             $em->flush($photo);
         }
 
-        return $this->redirectToRoute('admin_foto_index');
+        return $this->redirectToRoute('admin_photoalbum_index');
     }
 
     /**

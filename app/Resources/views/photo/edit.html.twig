@@ -22,7 +22,6 @@
                 <a class="btn btn-success" href="{{ path('admin_photoalbum_show', {'id': photo.album.id}) }}">Torna alla lista</a>
             </li>
             <li>
-                {# TODO: Reindirizzare il form all'index degli album #}
                 {{ form_start(delete_form) }}
                 <input class="btn btn-danger" type="submit" value="Elimina">
                 {{ form_end(delete_form) }}

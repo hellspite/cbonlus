@@ -1,7 +1,13 @@
+AppBundle\Entity\Role:
+    role1:
+        name: Psicologa/Psicoterapeuta
+    role2:
+        name: Logopedista
+
 AppBundle\Entity\Equipe:
     alessia:
         name: Alessia Carleschi
-        role: Psicologa/Psicoterapeuta
+        role: '@role1'
         text: |
                 Psicologa clinica e di comunità. Psicoterapeuta e Specialista in Psicologia della Salute presso l’ Università degli Studi “La Sapienza” di Roma.<br/>
                 Iscritta all'Ordine degli Psicologi del Lazio - Numero iscrizione 10740<br/> 
@@ -15,7 +21,7 @@ AppBundle\Entity\Equipe:
         email: alessiacarleschi@tiscali.it
     licia:
         name: Licia Spataro
-        role: Psicologa/Psicoterapeuta
+        role: '@role1'
         text: |
                 Psicoterapeuta e Specialista in Psicologia della Salute presso Università degli Studi “Sapienza” in Roma.<br/>
                 Iscritta all'Ordine degli Psicologi del Lazio - Numero iscrizione 18785. Membro SIPSA (Società Italiana di Psicologia della Salute) dal 2010.<br/>
@@ -25,7 +31,7 @@ AppBundle\Entity\Equipe:
                 Coordina le attività cliniche, organizzative e progettuali per l’Associazione Cavallino Bianco Onlus dal 2015.<br/>
     silvia:
         name: Silvia Accogli
-        role: Logopedista
+        role: '@role2'
         text: |
                 Logopedista laureata presso l’Università degli Studi di Roma Tor Vergata nel dicembre 2001.<br/>
                 Presso il Cavallino Bianco di Ostia in èquipe si occupa di valutazione e trattamento nell’eta’ evolutiva di Disturbi Specifici di Apprendimento (Dislessia, disgrazia, disortografia, discalculia) Disturbi specifici di Linguaggio, quali ritardi nell’acquisizione del linguaggio, alterazioni dei tratti fonetici e articolatori, dislalie, disturbi della fluenza.. Rieducazione dei disturbi comportamentali spesso associati ad alterazioni del linguaggio: iperattivita’, sindromi  ADHD, tratti artistici.<br/>

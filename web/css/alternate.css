@@ -329,6 +329,16 @@ body{
 }
 /* Fine Gallery */
 
+/* Equipe */
+.equipe-table > tbody > tr > td > a.name{
+    font-size:1.5em !important;
+}
+
+.equipe-table > tbody > tr > td{
+    vertical-align:middle !important;
+}
+/* Fine Equipe */
+
 .footer{
     margin-top:40px;
     padding-top:10px;

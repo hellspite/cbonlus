@@ -14,13 +14,13 @@
     <div class="container-fluid main-box">
         <div class="row">
             <div class="col-sm-12 main-cell">
-                <table class="table table-hover">
+                <table class="equipe-table table table-hover">
                     {% for role in roles %}
                         <tr>
                             <td><h3>{{ role.name }}</h3></td>
                             {% for e in role.equipes %}
                             <td>
-                                <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">{{ e.name }}</a>
+                                <a class="name" href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">{{ e.name }}</a>
                                 <div class="collapse" id="collapse{{e.id}}">
                                     {{ e.text|raw }}
                                     <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">

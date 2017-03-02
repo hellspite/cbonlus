@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Area Riabilitativa{% endblock %}
+
+{% block body %}
+    <div class="img-head">
+        <img src="{{ asset('images/chisiamo.jpg') }}" class="img-responsive" />
+    </div>
+
+    <div class="container-fluid main-box">
+        <h2>Area riabilitativa</h2>
+        <div>
+            La riabilitazione è un processo di soluzione dei problemi e di educazione nel corso dei quali si porta una persona a raggiungere il miglior livello di vita possibile sul piano fisico, funzionale, sociale ed emozionale, con la minor restrizione possibile delle sue azioni.<br/>
+            Il processo riabilitativo coinvolge anche la famiglia del soggetto e quanti sono a lui vicini.<br/> 
+            Di conseguenza, il processo riabilitativo riguarda, oltre che aspetti strettamente clinici, anche aspetti psicologici e sociali. Per raggiungere un buon livello di efficacia qualsiasi progetto di riabilitazione, per qualsiasi individuo, deve quindi essere mirato su obiettivi plurimi, programmati in maniera ordinata, perché l’autonomia raggiungibile nei diversi ambiti possa tradursi in autonomia delle persona nel suo complesso e in una migliore qualità della vita.
+        </div>
+
+        <h2>Attività</h2>
+        <div>
+            <ul>
+                <li>Interventi e Valutazione del linguaggio, della sfera motoria e dell’area neuropsicologica</li> 
+                <li>
+                    Interventi di riabilitazione e apprendimento nelle patologie di interesse logopedico, psicomotorio, neuropsichiatrico<br/>
+                    Nello specifico:
+                    <ul>
+                        <li>Neuro-comportamentali (causati da traumi cranici, eventi patologici cerebrali, autismo, demenza etc)</li>
+                        <li>Della voce, di competenza otorinolaringoiatrica e foniatrica (disfonia, disartria, dislalia, disodie, difficoltà di linguaggio legati alla sordità, balbuzie)</li>
+                        <li>Delle funzioni orali (disfagia, deglutizione atipica)</li>
+                        <li>Rieducazione della deglutizione</li>
+                        <li>Rieducazione motoria</li>
+                        <li>Attentiva e comportamentale</li> 
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            Le prestazioni sono erogate con interventi individuali e di gruppo secondo quanto previsto dal Progetto Riabilitativo Individuale e riguardano i seguenti ambiti: neuropsichiatria, fisisatria, psicologia,  logopedia, psicomotricità, attività educative, attività assistenziali. Per la specificità dell'età evolutiva gli obiettivi del progetto riabilitativo sono declinati nell'ottica dell'inclusione e della maggior partecipazione possibile del bambino all'interno dei suoi contesti di vita (famiglia, scuola, ecc…).
+        </div>
+    </div>
+{% endblock %}

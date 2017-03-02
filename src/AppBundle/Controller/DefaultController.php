@@ -100,4 +100,10 @@ class DefaultController extends Controller
         return $this->render('default/donate.html.twig');
     }
 
+    /**
+     * @Route("/area-riabilitativa", name="riabilitativa")
+     */
+    public function riabilitativaAction(Request $request){
+        return $this->render('default/riabilitativa.html.twig');
+    }
 }

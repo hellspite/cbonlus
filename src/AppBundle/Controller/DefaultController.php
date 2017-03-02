@@ -113,4 +113,11 @@ class DefaultController extends Controller
     public function psicologicaAction(Request $request){
         return $this->render('default/psicologica.html.twig');
     }
+
+    /**
+     * @Route("/area-psicopedagogica", name="psicopedagogica")
+     */
+    public function psicologicaAction(Request $request){
+        return $this->render('default/psicopedagogica.html.twig');
+    }
 }

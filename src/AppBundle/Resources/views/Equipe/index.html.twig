@@ -28,6 +28,12 @@
                                     </a>
                                 </div>
                             </td>
+                            {# Se questo ruolo non ha il massimo numero di equipe inseriamo i <td> vuoti mancanti #}
+                            {% if loop.last and loop.index < max_people %}
+                                {% for i in range(loop.index+1, max_people) %}
+                                    <td>&nbsp;</td>
+                                {% endfor %}
+                            {% endif %}
                             {% endfor %}
                         </tr>
                     {% endfor %}

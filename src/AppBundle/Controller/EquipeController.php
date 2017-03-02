@@ -20,10 +20,24 @@ class EquipeController extends Controller
 
         $roles = $em->getRepository('AppBundle:Role')->findAll();
 
+        //Conto il numero totale di ruoli
+        $roles_num = count($roles);
+
+        //Inizializzo una variabile per contenere il numero maggiore di 
+        //equipe in un ruolo
+        $max_people = 0;
+
+        for($i=0; $i<$roles_num; $i++){
+            $num = count($roles[$i]->getEquipes());
+            if($num > $max_people)
+                $max_people = $num;
+        }
+
         $equipe = $em->getRepository('AppBundle:Equipe')->getByName();
 
         return $this->render('AppBundle:Equipe:index.html.twig', array(
             'roles' => $roles,
+            'max_people' => $max_people,
             'equipe' => $equipe
         ));
     }

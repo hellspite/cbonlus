@@ -106,4 +106,11 @@ class DefaultController extends Controller
     public function riabilitativaAction(Request $request){
         return $this->render('default/riabilitativa.html.twig');
     }
+
+    /**
+     * @Route("/area-psicologica", name="psicologica")
+     */
+    public function psicologicaAction(Request $request){
+        return $this->render('default/psicologica.html.twig');
+    }
 }

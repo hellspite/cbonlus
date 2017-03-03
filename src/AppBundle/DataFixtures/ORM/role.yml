@@ -3,6 +3,12 @@ AppBundle\Entity\Role:
         name: Psicologa/Psicoterapeuta
     role2:
         name: Logopedista
+    role3:
+        name: Neuropsicomotricista
+    role4:
+        name: Tutor DSA
+    role5:
+        name: Neuropsichiatra
 
 AppBundle\Entity\Equipe:
     alessia:
@@ -37,3 +43,41 @@ AppBundle\Entity\Equipe:
                 Presso il Cavallino Bianco di Ostia in èquipe si occupa di valutazione e trattamento nell’eta’ evolutiva di Disturbi Specifici di Apprendimento (Dislessia, disgrazia, disortografia, discalculia) Disturbi specifici di Linguaggio, quali ritardi nell’acquisizione del linguaggio, alterazioni dei tratti fonetici e articolatori, dislalie, disturbi della fluenza.. Rieducazione dei disturbi comportamentali spesso associati ad alterazioni del linguaggio: iperattivita’, sindromi  ADHD, tratti artistici.<br/>
                 Esperta in Terapia Miofunzionale, per la correzione della deglutizione atipica, e degli squilibri orofacciali,  in collaborazione con  dentisti /ortodonzisti.<br/> 
                 Si occupa di Disfagia, rieducazione della deglutizione e alimentazione per bocca,  sia in patologie neurologiche che meccaniche o post chirurgiche, in eta’ pediatrica e adulta.  Disfonia: rieducazione delle alterazioni della voce in eta’ pediatrica e adulta, associata a cause organiche: noduli, polipi , paralisi cordali o cause funzionali.<br/>
+
+    francesca:
+        name: Francesca Maturilli
+        role: '@role2'
+        text: |
+                Francesca Maturilli logopedista laureata all'IRCCS S.Lucia con votazione 110/110 e lode si occupa di valutazione e trattamento riabilitativo dei disturbi specifici di linguaggio in età evolutiva e di disturbi specifici dell'apprendimento scolastico.<br/>
+                È competente del metodo LIS autorizzato dall'Ente Nazionale dei Sordi di Roma.<br/>
+
+    roberta:
+        name: Roberta Maria Incarbona
+        role: '@role3'
+        text: |
+                Nel 2009 consegue la Laurea in Terapia della neuro e psicomotricità dell'età evolutiva presso l'Università La Sapienza di Roma con esito finale di 110 e lode, nel 2010 ottiene l'attestato come idrokinesiterapista.<br/>
+                E' specializzata nella riabilitazione dei disturbi dell'età evolutiva tra i quali l'autismo, disturbi della coordinazione, disturbi dell'apprendimento, paralisi cerebrali.<br/>
+
+    adele:
+        name: Adele Manoni
+        role: '@role3'
+        text: |
+                Adele Manoni, Terapista della neuro e psicomotricità dell'età evolutiva, specializzata nella prevenzione, terapia e riabilitazione di disturbi neurologici, disturbi neuromotori (paralisi cerebrali infantili, paralisi ostetriche, ecc.), disturbi della coordinazione motoria (disprassia), disturbi dello spettro autistico, ritardi psicomotori e cognitivi, disturbi dell'attenzione, disturbi specifici di apprendimento (dislessia, disortografia, discalculia, disgrafia), sindromi genetiche.<br/>
+
+    laura:
+        name: Laura Cassinelli
+        role: '@role4'
+        text: |
+                Laura Cassinelli, psicologa dello Sviluppo del Bambino e dell'Adolescente nel Ciclo di Vita, con specializzazione in Psicologia Clinica, iscritta all'Albo A degli Psicologi della Lombardia.<br/> 
+                Esperta in terapia cognitivo-comportamentale e tutoraggio scolastico per bambini con disturbi dell'apprendimento e autismo, e in psicologia scolastica, percorsi sull'autostima e orientamento scolastico.<br/>
+
+    valentina:
+        name: Valentina De Clemente
+        role: '@role5'
+        text: |
+                Dr.ssa Valentina De Clemente<br/> 
+                Medico Chirurgo<br/>
+                Specializzata in Neuropsichiatria Infantile<br/>
+                Dottorando di ricerca in Neuroscienze<br/>
+                Laureata alla Federico II di Napoli e Specializzata all'università Cattolica del Sacro Cuore di Roma dove continuo la mia attività clinica e di ricerca. La mia attività si dedica alla diagnosi e alla terapia di patologie neurologiche e psichiatriche dell'età evolutiva con attenzione particolare a disturbi di spettro autistico, ADHD, DSA, disturbi dell'umore, sindromi genetiche, paralisi cerebrali infantili, epilessia.<br/> 
+                Psicodiagnosta certificata (test Rorsharc MMPI Million test proiettivi dei bambini).<br/>

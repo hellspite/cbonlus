@@ -10,4 +10,11 @@ namespace AppBundle\Repository;
  */
 class RoleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAll(){
+        $query = $this->createQueryBuilder('r')
+            ->orderBy('r.id', 'ASC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

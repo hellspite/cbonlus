@@ -18,7 +18,7 @@ class EquipeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $roles = $em->getRepository('AppBundle:Role')->findAll();
+        $roles = $em->getRepository('AppBundle:Role')->getAll();
 
         //Conto il numero totale di ruoli
         $roles_num = count($roles);
@@ -33,7 +33,7 @@ class EquipeController extends Controller
                 $max_people = $num;
         }
 
-        $equipe = $em->getRepository('AppBundle:Equipe')->getByName();
+        $equipe = $em->getRepository('AppBundle:Equipe')->getById();
 
         return $this->render('AppBundle:Equipe:index.html.twig', array(
             'roles' => $roles,

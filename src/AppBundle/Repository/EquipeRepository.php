@@ -19,4 +19,12 @@ class EquipeRepository extends \Doctrine\ORM\EntityRepository
 
         return $query->getResult();
     }
+
+    public function getById(){
+        $query = $this->createQueryBuilder('e')
+            ->orderBy('e.id', 'ASC')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

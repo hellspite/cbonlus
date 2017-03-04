@@ -36,6 +36,10 @@ body{
     background-color:#e7ffff;
 }
 
+.header-img{
+    padding-left:0 !important;
+}
+
 .header-slogan{
     position:relative;
     left:36%;

@@ -36,10 +36,10 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servizi <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('riabilitativa') }}">Area Riabilitativa</a></li>
                             <li><a href="{{ path('psicologica') }}">Area Psicologica e Clinica</a></li>
-                            <li><a href="{{ path('psicopedagogica') }}">Area Psicopedagogica</a></li>
                             <li><a href="{{ path('formativa') }}">Area Formativa</a></li>
+                            <li><a href="{{ path('riabilitativa') }}">Area Riabilitativa</a></li>
+                            <li><a href="{{ path('psicopedagogica') }}">Area Psicopedagogica</a></li>
                         </ul>
                     </li>
                     <li {% if active == 'news' %}class="active"{% endif %}><a href="{{ path('news') }}">News</a></li>

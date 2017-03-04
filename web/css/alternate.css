@@ -327,6 +327,13 @@ body{
 }
 /* Fine Equipe */
 
+/* Aree Servizi */
+.img-aree{
+    padding-left:20% !important;
+    padding-right:auto !important;
+}
+/* Fine Aree Servizi */
+
 .footer{
     margin-top:40px;
     padding-top:10px;

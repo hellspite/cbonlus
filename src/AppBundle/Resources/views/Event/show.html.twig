@@ -3,15 +3,48 @@
 {% block title %}{{ parent() }} - {{ event.name }}{% endblock %}
 
 {% block body %}
-    <div class="img-head">
-        <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
-    </div>
-
-    <div class="container main-box">
+    <div class="container-fluid main-box">
         <div class="row">
         <div class="col-sm-12 main-cell">
-            <h2>{{ event.name }} - {{ event.date | date("d/m/Y") }} @ {{ event.place | title }}</h2>
-            {{ event.text | raw }}
+            <div class="event-single row">
+                <div class="date col-sm-1">
+                    <div class="day">{{ event.date|date('d') }}</div>
+                    <div class="month-year">
+                        {% if event.date|date('m') == 1 %}
+                        Gen
+                        {% elseif event.date|date('m') == 2 %}
+                        Feb
+                        {% elseif event.date|date('m') == 3 %}
+                        Mar
+                        {% elseif event.date|date('m') == 4 %}
+                        Apr
+                        {% elseif event.date|date('m') == 5 %}
+                        Mag
+                        {% elseif event.date|date('m') == 6 %}
+                        Giu
+                        {% elseif event.date|date('m') == 7 %}
+                        Lug
+                        {% elseif event.date|date('m') == 8 %}
+                        Ago
+                        {% elseif event.date|date('m') == 9 %}
+                        Set
+                        {% elseif event.date|date('m') == 10 %}
+                        Ott
+                        {% elseif event.date|date('m') == 11 %}
+                        Nov
+                        {% elseif event.date|date('m') == 12 %}
+                        Dic
+                        {% endif %}
+                        {{ event.date|date("Y") }}
+                    </div>
+                </div>
+                <div class="event-content col-sm-11">
+                    <a href="{{ path('event_show', {id: event.id}) }}"><h1>{{ event.name|title }}</h1></a>
+                    <p>
+                        {{ event.text|raw }}
+                    </p>
+                </div>
+            </div>
         </div>
         </div>
     </div>

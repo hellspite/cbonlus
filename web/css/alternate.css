@@ -334,6 +334,10 @@ body{
 }
 /* Fine Aree Servizi */
 
+.donazioni img{
+    margin:auto;
+}
+
 .footer{
     margin-top:40px;
     padding-top:10px;

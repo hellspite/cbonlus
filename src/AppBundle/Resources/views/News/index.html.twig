@@ -11,16 +11,53 @@
         <img src="{{ asset('images/mission.png') }}" class="img-responsive" />
     </div>
 
-    <div class="container main-box">
+    <div class="container-fluid main-box">
         <div class="row">
         <div class="col-sm-12 main-cell">
             <h3>Ultime Notizie</h3>
             {% for post in posts %}
-                <ul class="links">
-                    <li>
-                        <a href="{{ path('news_show', {id: post.id}) }}">{{ post.title }} - {{ post.date | date("d/m/Y")  }}</a>
-                    </li>
-                </ul>
+                <div class="event-homepage row">
+                    <div class="date col-sm-1 col-sm-offset-1">
+                        <div class="day">{{ post.date|date('d') }}</div>
+                        <div class="month-year">
+                            {% if post.date|date('m') == 1 %}
+                            Gen
+                            {% elseif post.date|date('m') == 2 %}
+                            Feb
+                            {% elseif post.date|date('m') == 3 %}
+                            Mar
+                            {% elseif post.date|date('m') == 4 %}
+                            Apr
+                            {% elseif post.date|date('m') == 5 %}
+                            Mag
+                            {% elseif post.date|date('m') == 6 %}
+                            Giu
+                            {% elseif post.date|date('m') == 7 %}
+                            Lug
+                            {% elseif post.date|date('m') == 8 %}
+                            Ago
+                            {% elseif post.date|date('m') == 9 %}
+                            Set
+                            {% elseif post.date|date('m') == 10 %}
+                            Ott
+                            {% elseif post.date|date('m') == 11 %}
+                            Nov
+                            {% elseif post.date|date('m') == 12 %}
+                            Dic
+                            {% endif %}
+                            {{ post.date|date("Y") }}
+                        </div>
+                    </div>
+                    <div class="event-content col-sm-10">
+                        <a href="{{ path('news_show', {id: post.id}) }}"><h1>{{ post.title|title }}</h1></a>
+                        <p>
+                            {{ post.text|truncate(50, true)|raw }}
+                            {% if post.text|length > 50 %}
+                                <a href="{{ path('news_show', {id: post.id}) }}">continua a leggere</a>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
             {% endfor %}
         </div>
         </div>

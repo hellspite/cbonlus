@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Servizi{% endblock %}
+
+{% block body %}
+    <div class="img-head img-aree">
+        <img src="{{ asset('images/area1.png') }}" class="img-responsive" />
+    </div>
+
+    <div class="container-fluid main-box">
+        <h2>Servizi offerti</h2>
+        <div>
+            L’Associazione offre colloqui di accoglienza per le famiglie, attraverso i quali la situazione viene individuata ed esaminata da personale specialistico. 
+            <ul>
+                <li>Sportello Caf Patronato</li> 
+                <li>Colloqui di orientamento e sostegno per definire il percorso</li> 
+                <li>Promozioni gruppi di aiuto mutuo-aiuto</li> 
+                <li>Il percorso segue le Linee Guida del MIUR (Decreto Ministeriale del 2012)</li> 
+            </ul>
+        </div>
+
+        <h2>Aree di intervento</h2>
+        <div>
+            <ul>
+                <li>linguaggio</li> 
+                <li>comportamento</li> 
+                <li>apprendimento</li> 
+                <li>sfera emotiva-relazionale</li> 
+            </ul>
+        </div>
+
+        <h2>I nostri obiettivi</h2>
+            L’obiettivo principale del C.B.O. è quello di dare un apporto concreto e tangibile alle problematiche del territorio. Nello specifico: 
+            <ul>
+                <li>Accoglienza, Ascolto e Sostegno della persona e della famiglia</li> 
+                <li>Accompagnamento e presa in carico</li> 
+                <li>Qualità e costi accessibili</li> 
+                <li>Assidua, continua e sistematica collaborazione con le Scuole, le Asl, gli enti coinvolti e le famiglie</li> 
+            </ul>
+    </div>
+{% endblock %}

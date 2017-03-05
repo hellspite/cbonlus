@@ -101,6 +101,13 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/servizi", name="servizi")
+     */
+    public function serviziAction(Request $request){
+        return $this->render('default/servizi.html.twig');
+    }
+
+    /**
      * @Route("/area-riabilitativa", name="riabilitativa")
      */
     public function riabilitativaAction(Request $request){

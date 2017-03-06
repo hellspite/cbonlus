@@ -1,0 +1,17 @@
+AppBundle\Entity\Service:
+    gioco:
+        title: Gioco, Comprendo... Apprendo
+        document: gioco.pdf
+        updated_at: <dateTime()> 
+    deglutizione:
+        title: Deglutizione Atipica
+        document: deglutizione.pdf
+        updated_at: <dateTime()> 
+    caf:
+        title: Caf Patronato
+        document: caf.pdf
+        updated_at: <dateTime()> 
+    postadozione:
+        title: Progetto Post Adozione
+        document: postadozione.pdf
+        updated_at: <dateTime()> 

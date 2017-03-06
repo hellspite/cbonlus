@@ -1,7 +1,17 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Service:index{% endblock %}
+{% block title %}{{ parent() }} - Servizi Integrativi{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Service:index page</h1>
+    <div class="container-fluid main-box">
+        <div class="row">
+            <div class="col-sm-12 main-cell">
+                <h3>Servizi Integrativi</h3>
+                {% for service in services %}
+                    {# TODO: Da implementare #}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

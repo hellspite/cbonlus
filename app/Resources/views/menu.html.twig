@@ -44,7 +44,7 @@
                         </ul>
                     </li>
                     <li {% if active == 'news' %}class="active"{% endif %}><a href="{{ path('news') }}">News</a></li>
-                    <li><a href="#">Servizi Integrativi</a></li>
+                    <li><a href="{{ path('service_index') }}">Servizi Integrativi</a></li>
                     <li {% if active == 'event' %}class="active"{% endif %}><a href="{{ path('events') }}">Eventi</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Galleria <span class="caret"></a>

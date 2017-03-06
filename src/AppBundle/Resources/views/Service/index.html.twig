@@ -8,9 +8,9 @@
             <div class="col-sm-12 main-cell">
                 <h3>Servizi Integrativi</h3>
                 {% for service in services %}
-                    {# TODO: Da implementare #}
+                    <h3>{{ service.title|title }}</h3>
+                    <a href="{{ asset(['uploads/documenti/', service.document] | join)}}"><img src="{{ asset('images/pdf.png') }}" class="pdf-icon" /></a>
                 {% endfor %}
-                </div>
             </div>
         </div>
     </div>

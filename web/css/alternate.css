@@ -154,6 +154,15 @@ body{
     text-shadow:0 1px 1px rgba(0,0,0,.4)
 }
 
+.event-caption h1{
+    color:#c12a23 !important;
+}
+
+.btn-event{
+    background-image:none !important;
+    background-color:#c12a23 !important;
+}
+
 .carousel-caption{
     color:#333 !important;
 }

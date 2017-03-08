@@ -39,10 +39,17 @@
                     </div>
                 </div>
                 <div class="event-content col-sm-11">
-                    <a href="{{ path('event_show', {id: event.id}) }}"><h1>{{ event.name|title }}</h1></a>
+                    <a href="{{ path('event_show', {id: event.id}) }}"><h1>{{ event.name }}</h1></a>
+                    <h3>{{ event.place }}</h3>
                     <p>
                         {{ event.text|raw }}
                     </p>
+                    {% if event.document %}
+                        <h2>Documento:</h2>
+			<a href="{{ asset(['uploads/documenti/', event.document] | join) }}">
+				<img src="{{ asset('images/pdf.png') }}" class="pdf-icon" />
+			</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

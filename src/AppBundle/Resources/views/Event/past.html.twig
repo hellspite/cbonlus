@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="event-content col-sm-10">
-                        <a href="{{ path('event_show', {id: e.id}) }}"><h1>{{ e.name|title }}</h1></a>
+                        <a href="{{ path('event_show', {id: e.id}) }}"><h1>{{ e.name }}</h1></a>
                         <p>
                             {{ e.text|truncate(50, true)|raw }}
                             {% if e.text|length > 50 %}

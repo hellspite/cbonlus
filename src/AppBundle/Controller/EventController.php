@@ -19,8 +19,11 @@ class EventController extends Controller
 
         $events = $em->getRepository('AppBundle:Event')->getNextEvents();
 
+        $past = $em->getRepository('AppBundle:Event')->getPastEvents();
+
         return $this->render('AppBundle:Event:index.html.twig', array(
-            'events' => $events
+            'events' => $events,
+            'past' => $past
         ));
     }
 

@@ -3,6 +3,10 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Event
@@ -49,6 +53,89 @@ class Event
      */
     private $text;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="document", type="string", length=255, nullable=true)
+     */
+    private $document;
+
+    /**
+     * @Vich\UploadableField(mapping="service_document", fileNameProperty="document")
+     *
+     * @var File
+     */
+    private $file;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+    /**
+     * Sets file.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
+     *
+     * @return Service
+     */
+    public function setFile(File $file = null)
+    {
+        $this->file = $file;
+
+        if($file){
+                
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get file.
+     *
+     * @return File|null
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set document
+     *
+     * @param string $document
+     *
+     * @return Service
+     */
+    public function setDocument($document)
+    {
+        $this->document = $document;
+
+        return $this;
+    }
+
+    /**
+     * Get document
+     *
+     * @return string
+     */
+    public function getDocument()
+    {
+        return $this->document;
+    }
+
+    public function setUpdatedAt($date){
+
+        $this->updatedAt = $date;
+
+    }
+
+    public function getUpdatedAt(){
+        return $this->updatedAt;
+    }
 
     /**
      * Get id

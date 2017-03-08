@@ -29,6 +29,13 @@ body{
     background-color:#fff;
 }
 
+@media (max-width:1023px){
+    body{
+        background-image:none;
+    }
+
+}
+
 .header{
     padding-top:10px;
     padding-left:15px;
@@ -190,7 +197,6 @@ body{
     color: #013654;
     font-weight:bold;
     text-align:center;
-    max-width:800px;
     background-color: #013654;
     clear:both;
 }
@@ -393,5 +399,11 @@ body{
 @media screen and (max-width:767px){
     .header-slogan{
         display:none;
+    }
+}
+
+@media (max-width:1439px){
+    .header-slogan{
+        left:0;
     }
 }

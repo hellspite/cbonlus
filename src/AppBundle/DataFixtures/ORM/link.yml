@@ -11,3 +11,6 @@ AppBundle\Entity\Link:
     link4:
         title: Giunti Scuola
         url: http://www.giuntiscuola.it/
+    link5:
+        title: Scuola di specializzazione in Psicologia della Salute
+        url: https://web.uniroma1.it/psicologiadellasalute/

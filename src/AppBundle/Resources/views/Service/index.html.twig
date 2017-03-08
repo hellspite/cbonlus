@@ -7,10 +7,12 @@
         <img src="{{ asset('images/integrativi.jpg') }}" class="img-responsive" />
     </div>
 
+    <div class="link">
+        <h3>Servizi Integrativi:</h3>
+    </div>
     <div class="container-fluid main-box">
         <div class="row">
-            <div class="col-sm-12 main-cell">
-                <h3>Servizi Integrativi</h3>
+            <div class="col-sm-12 main-cell services">
                 {% for service in services %}
                     <h3>{{ service.title|title }}</h3>
                     <a href="{{ asset(['uploads/documenti/', service.document] | join)}}"><img src="{{ asset('images/pdf.png') }}" class="pdf-icon" /></a>

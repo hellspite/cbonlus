@@ -6,7 +6,7 @@ AppBundle\Entity\Role:
     role3:
         name: Neuropsicomotricista
     role4:
-        name: Tutor DSA
+        name: Tutor DSA/Psicologa
     role5:
         name: Neuropsichiatra
 

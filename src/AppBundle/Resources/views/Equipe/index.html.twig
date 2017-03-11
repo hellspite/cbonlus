@@ -19,30 +19,34 @@
                     L’Equipe del <strong>Centro della Famiglia e la Persona</strong> nel ciclo di vita, è formata da professionisti specializzati. Le responsabili del Centro sono la dott.ssa Licia Spataro e la dott.ssa Alessia Carleschi
                     <h3>Contatta la nostra <a href="mailto:equipe@cbonlus.org">equipe</a></h3>
                 </div>
-                <table class="equipe-table table table-hover">
-                    {% for role in roles %}
-                        <tr>
-                            <td><h3>{{ role.name }}</h3></td>
-                            {% for e in role.equipes %}
-                            <td>
-                                <a class="name" href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">{{ e.name }}</a>
-                                <div class="collapse" id="collapse{{e.id}}">
-                                    {{ e.text|raw }}
-                                    <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
-                                        chiudi
-                                    </a>
-                                </div>
-                            </td>
-                            {# Se questo ruolo non ha il massimo numero di equipe inseriamo i <td> vuoti mancanti #}
-                            {% if loop.last and loop.index < max_people %}
-                                {% for i in range(loop.index+1, max_people) %}
+                <div class="table-responsive">
+                    <table class="equipe-table table table-hover table-condensed">
+                        <tbody>
+                            {% for role in roles %}
+                            <tr>
+                                <td><h3>{{ role.name }}</h3></td>
+                                {% for e in role.equipes %}
+                                <td>
+                                    <a class="name" href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">{{ e.name }}</a>
+                                    <div class="collapse" id="collapse{{e.id}}">
+                                        {{ e.text|raw }}
+                                        <a href="#collapse{{e.id}}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse{{e.id}}">
+                                            chiudi
+                                        </a>
+                                    </div>
+                                </td>
+                                {# Se questo ruolo non ha il massimo numero di equipe inseriamo i <td> vuoti mancanti #}
+                                    {% if loop.last and loop.index < max_people %}
+                                    {% for i in range(loop.index+1, max_people) %}
                                     <td>&nbsp;</td>
-                                {% endfor %}
-                            {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endfor %}
+                            </tr>
                             {% endfor %}
-                        </tr>
-                    {% endfor %}
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

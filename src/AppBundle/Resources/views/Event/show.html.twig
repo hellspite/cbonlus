@@ -44,11 +44,26 @@
                     <p>
                         {{ event.text|raw }}
                     </p>
-                    {% if event.document %}
-                        <h2>Documento:</h2>
-			<a href="{{ asset(['uploads/documenti/', event.document] | join) }}">
-				<img src="{{ asset('images/pdf.png') }}" class="pdf-icon" />
-			</a>
+                    {% if event.documents %}
+                        <div class="container-fluid">
+                            <h2>Documenti:</h2>
+                            {% for document in event.documents %}
+                                {% if loop.first %}
+                                    <div class="row">
+                                {% endif %}
+                                <div class="col-sm-3">
+                                    <a href="{{ asset(['uploads/documenti/', document.name] | join) }}">
+                                        <img src="{{ asset('images/pdf.png') }}" class="pdf-icon" /><br/>
+                                        {{ document.name }}
+                                    </a>
+                                </div>
+                                {% if loop.index % 4 == 0 %}
+                                    </div>
+                                    <div class="row">
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                        </div>
                     {% endif %}
                 </div>
             </div>

@@ -127,4 +127,3 @@ class Video
         $this->setCreatedAt(new \DateTime());
     }
 }
-

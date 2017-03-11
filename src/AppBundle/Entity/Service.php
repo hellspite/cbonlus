@@ -150,4 +150,3 @@ class Service
         return $this->updatedAt;
     }
 }
-

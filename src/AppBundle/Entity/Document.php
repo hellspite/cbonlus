@@ -35,6 +35,12 @@ class Document
      */
     private $type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Event", inversedBy="documents")
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id")
+     */
+    private $event;
+
 
     /**
      * Get id
@@ -93,5 +99,28 @@ class Document
     {
         return $this->type;
     }
-}
 
+    /**
+     * Set event
+     *
+     * @param \AppBundle\Entity\Event $event
+     *
+     * @return Document
+     */
+    public function setEvent(\AppBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \AppBundle\Entity\Event
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+}

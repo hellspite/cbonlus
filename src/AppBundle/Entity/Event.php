@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -54,11 +55,9 @@ class Event
     private $text;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="document", type="string", length=255, nullable=true)
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="event")
      */
-    private $document;
+    private $documents;
 
     /**
      * @Vich\UploadableField(mapping="service_document", fileNameProperty="document")
@@ -73,6 +72,10 @@ class Event
      * @var \DateTime
      */
     private $updatedAt;
+
+    public function __construct(){
+       $this->documents = new ArrayCollection(); 
+    }
 
     /**
      * Sets file.
@@ -241,5 +244,39 @@ class Event
     public function getText()
     {
         return $this->text;
+    }
+
+    /**
+     * Add document
+     *
+     * @param \AppBundle\Entity\Document $document
+     *
+     * @return Event
+     */
+    public function addDocument(\AppBundle\Entity\Document $document)
+    {
+        $this->documents[] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Remove document
+     *
+     * @param \AppBundle\Entity\Document $document
+     */
+    public function removeDocument(\AppBundle\Entity\Document $document)
+    {
+        $this->documents->removeElement($document);
+    }
+
+    /**
+     * Get documents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDocuments()
+    {
+        return $this->documents;
     }
 }

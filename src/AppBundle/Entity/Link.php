@@ -94,4 +94,3 @@ class Link
         return $this->title;
     }
 }
-

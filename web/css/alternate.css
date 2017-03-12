@@ -362,8 +362,13 @@ body{
 /* Servizi Integrativi */
 .pdf-icon{
     width:60px;
+    height:62px;
 }
 /* Fine Servizi Integrativi */
+
+.event-document{
+    text-align:center;
+}
 
 /* Flexible iFrame */
 

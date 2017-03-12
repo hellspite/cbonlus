@@ -51,10 +51,14 @@
                                 {% if loop.first %}
                                     <div class="row">
                                 {% endif %}
-                                <div class="col-sm-3">
+                                <div class="col-sm-3 event-document">
                                     <a href="{{ asset(['uploads/documenti/', document.name] | join) }}">
-                                        <img src="{{ asset('images/pdf.png') }}" class="pdf-icon" /><br/>
-                                        {{ document.name }}
+                                        {% if document.type == 'pdf' %}
+                                            <img src="{{ asset('images/pdf.png') }}" class="pdf-icon" /><br/>
+                                        {% else %}
+                                            <img src="{{ asset('images/text-document-icon.svg') }}" class="pdf-icon" /><br/>
+                                        {% endif %}
+                                        {{ document.title }}
                                     </a>
                                 </div>
                                 {% if loop.index % 4 == 0 %}

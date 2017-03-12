@@ -18,7 +18,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $posts = $em->getRepository('AppBundle:Post')->orderedByDate(3);
+        $posts = $em->getRepository('AppBundle:Post')->orderedByDate(1);
 
         $event = $em->getRepository('AppBundle:Event')->getNextEvents(1);
 

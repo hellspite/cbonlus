@@ -31,6 +31,13 @@ class Document
     /**
      * @var string
      *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="type", type="string", length=255)
      */
     private $type;
@@ -122,5 +129,29 @@ class Document
     public function getEvent()
     {
         return $this->event;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Document
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 }

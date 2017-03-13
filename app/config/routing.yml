@@ -4,3 +4,7 @@ app:
 
 elfinder:
      resource: "@FMElfinderBundle/Resources/config/routing.yml"
+
+oneup_uploader:
+    resource: .
+    type: uploader

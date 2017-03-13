@@ -32,6 +32,15 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/dropzone", name="dropzone")
+     */
+    public function dropAction(Request $request)
+    {
+
+        return $this->render('default/drop.html.twig');
+    }
+
+    /**
      * @Route("/presentazione", name="mission")
      */
     public function missionAction(Request $request){

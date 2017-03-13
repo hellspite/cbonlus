@@ -162,4 +162,4 @@ oneup_uploader:
         gallery:
             frontend: dropzone
             storage:
-                directory: "%kernel.root_dir%/.,/web/images/gallery/"
+                directory: "%kernel.root_dir%/../web/images/gallery/"

@@ -37,6 +37,10 @@
 
 
     <a class="btn btn-success" href="{{ path('admin_foto_new') }}">Nuova Foto</a><br/><br/>
+    <h3>Aggiungi foto:</h3>
+    <form action="{{ oneup_uploader_endpoint('gallery') }}" class="dropzone" style="width:200px; height:200px; border:4px dashed black">
+        <input type="hidden" name="album" value="{{ photoAlbum.id }}" />
+    </form>
     <div id="links">
         {% for photo in photos %}
             {% if loop.index == 1 %}
@@ -54,7 +58,11 @@
         {% endfor %}
         </div>
     </div>
-    <a class="btn btn-success" href="{{ path('admin_foto_new') }}">Nuova Foto</a>
 
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
 {% endblock %}

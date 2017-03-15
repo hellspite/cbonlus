@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\ContactType;
 use AppBundle\Entity\Post;
@@ -142,5 +143,28 @@ class DefaultController extends Controller
      */
     public function formativaAction(Request $request){
         return $this->render('default/formativa.html.twig');
+    }
+
+    /**
+     * @Route("/admin-update-sort", name="sort-update")
+     */
+    public function updateSortAction(Request $request)
+    {
+        $ids = $request->request->get('ids');
+
+        $em = $this->getDoctrine()->getManager();
+
+        for($i = 0; $i < count($ids); $i++){
+            $photo = $em->getRepository('AppBundle:Photo')->find($ids[$i]);
+            $photo->setPosition($i);
+
+            $em->persist($photo);
+        }
+
+        $em->flush();
+
+        $response = array('code' => 100, 'success' => true);
+
+        return new Response(json_encode($response));
     }
 }

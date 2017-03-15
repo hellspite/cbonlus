@@ -44,7 +44,7 @@
     <div id="links">
         <ul id="sortable">
         {% for photo in photos %}
-            <li class="ui-state-default">
+            <li id="{{ photo.id }}" class="ui-state-default">
                 <a href="{{ path('admin_foto_edit', { 'id': photo.id }) }}">
                     <img src="{{ asset(['/images/gallery/', photo.image] | join) }}" class="img-thumbnail img-responsive" />
                 </a>
@@ -60,11 +60,24 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $( function() {
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
-  } );
-  </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function(){
+        $( function() {
+            $( "#sortable" ).sortable({
+                update: function(event, ui){
+                    var ids = [];
+
+                    $("#sortable li").each(function(index){
+                        ids.push($(this).attr('id'));
+                    });
+
+                    $.post('{{ path("sort-update") }}', {'ids[]': ids});
+
+                }
+            });
+            $( "#sortable" ).disableSelection();
+        } );
+    });
+    </script>
 {% endblock %}

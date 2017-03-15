@@ -42,20 +42,15 @@
         <input type="hidden" name="album" value="{{ photoAlbum.id }}" />
     </form>
     <div id="links">
+        <ul id="sortable">
         {% for photo in photos %}
-            {% if loop.index == 1 %}
-                <div class="row gallery-row">
-            {% endif %}
-            <div class="photo-thumb col-sm-3">
+            <li class="ui-state-default">
                 <a href="{{ path('admin_foto_edit', { 'id': photo.id }) }}">
                     <img src="{{ asset(['/images/gallery/', photo.image] | join) }}" class="img-thumbnail img-responsive" />
                 </a>
-            </div>
-            {% if loop.index % 4 == 0 %}
-                </div>
-                <div class="row gallery-row">
-            {% endif %}
+            </li>
         {% endfor %}
+        </ul>
         </div>
     </div>
 
@@ -65,4 +60,11 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
 {% endblock %}

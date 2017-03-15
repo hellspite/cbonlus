@@ -54,3 +54,17 @@ ul.admin-actions-show{
     width:360px !important;
     margin-bottom:10px;
 }
+
+#sortable{
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+#sortable li{
+    margin: 3px 3px 3px 0; 
+    padding: 1px; 
+    float: left; 
+    font-size: 4em; 
+    text-align: center;
+}

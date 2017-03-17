@@ -366,6 +366,12 @@ body{
 }
 /* Fine Servizi Integrativi */
 
+/* Video */
+.video{
+    margin-bottom:20px;
+}
+/* Fine Video */
+
 .event-document{
     text-align:center;
 }

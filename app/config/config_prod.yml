@@ -21,4 +21,4 @@ monolog:
             type:  console
 
 parameters:
-    delivery_address: vegan.emiliano@gmail.com
+    delivery_address: equipe@cbonlus.org

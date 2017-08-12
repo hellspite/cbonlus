@@ -44,7 +44,7 @@
                     <p>
                         {{ event.text|raw }}
                     </p>
-                    {% if event.documents %}
+                    {% if event.documents|length > 0 %}
                         <div class="container-fluid">
                             <h2>Documenti:</h2>
                             {% for document in event.documents %}
